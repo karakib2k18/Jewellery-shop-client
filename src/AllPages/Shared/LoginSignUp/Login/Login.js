@@ -1,30 +1,39 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
-
+import Alert from '@mui/material/Alert';
+import Avatar from "@mui/material/Avatar";
+import { CircularProgress } from "@mui/material";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import useAuth from "../../../../hooks/useAuth";
 
 const theme = createTheme();
 
 const Login = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+  const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+  const location = useLocation();
+  const history = useHistory();
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    loginUser(data.email, data.password, location, history);
   };
 
+  const handleGoogleSignIn = () => {
+    signInWithGoogle(location, history);
+  };
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -32,74 +41,90 @@ const Login = () => {
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5" sx={{ fontWeight: "bold" }}>
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            {/* <Box component="form" noValidate sx={{ mt: 1 }}> */}
             <TextField
+              {...register("email", { required: true })}
               margin="normal"
-              required
               fullWidth
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="email"
-              autoFocus
+              required
             />
+            {/* {errors.email && (
+              
+              <Alert fullWidth severity="error"> Email is required</Alert>
+            )} */}
+
             <TextField
               margin="normal"
-              required
+              {...register("password", { required: true })}
               fullWidth
               name="password"
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              required
             />
-                        <Grid container>
+            {/* {errors.password && (
+               <Alert fullWidth severity="error">  Password is required</Alert>
+            )} */}
+            <Grid container>
               {/* <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
               </Grid> */}
               <Grid item>
-                <Link to="/signup" variant="body2"  style={{ textDecoration: "none", color: "black" }}>
+                <Link
+                  to="/signup"
+                  variant="body2"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   {"Create a New Account?"}
                 </Link>
               </Grid>
             </Grid>
+            {isLoading && <CircularProgress />}
+            {user?.email && (
+              <Alert severity="success">Login successfully!</Alert>
+            )}
+            {authError && <Alert severity="error">{authError}</Alert>}
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
-    
             >
               Sign In
             </Button>
-
 
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 2, fontWeight: "bold" }}
-    
+              onClick={handleGoogleSignIn}
             >
               Sign With Google
             </Button>
-          </Box>
+            {/* </Box> */}
+          </form>
         </Box>
       </Container>
     </ThemeProvider>
   );
-}
+};
 export default Login;

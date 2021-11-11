@@ -9,8 +9,12 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import Container from "@mui/material/Container";
+import useAuth from "../../../hooks/useAuth";
+import { Button } from "@mui/material";
+
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
@@ -73,7 +77,7 @@ const Navbar = () => {
                       m: 1,
                     }}
                   >
-                    Shop
+                    ShopN
                   </Typography>
                 </MenuItem>
               </NavLink>
@@ -99,16 +103,26 @@ const Navbar = () => {
               </NavLink>
             </Box>
 
-            <Box sx={{ flexGrow: 1 }} ></Box>
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              {/* NAVBAR FOR DESKTOP */}
+            <Box sx={{ flexGrow: 1 }}></Box>
+            
+            {user?.displayName || user?.email ?
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                {/* NAVBAR FOR DESKTOP */}
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="div"
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      p: 1,
+                      m: 1,
+                    }}
+                  >
+                    {user.displayName}
 
-              <NavLink
-                style={{ textDecoration: "none", color: "white" }}
-                to="/login"
-              >
-                <MenuItem>
-                  <Typography
+                  </Typography>
+                <Typography
                     variant="h6"
                     noWrap
                     component="div"
@@ -119,31 +133,75 @@ const Navbar = () => {
                       m: 1,
                     }}
                   >
-                    Login
+                    {user.email}
                   </Typography>
-                </MenuItem>
-              </NavLink>
-              <NavLink
-                style={{ textDecoration: "none", color: "white" }}
-                to="/signup"
-              >
-                <MenuItem>
-                  <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      p: 1,
-                      m: 1,
-                    }}
-                  >
-                    SignUp
-                  </Typography>
-                </MenuItem>
-              </NavLink>
-            </Box>
+                <NavLink
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/dashboard"
+                >
+                  <MenuItem>
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      component="div"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        p: 1,
+                        m: 1,
+                      }}
+                    >
+                      Dashboard
+                    </Typography>
+                  </MenuItem>
+                </NavLink>
+                <Button onClick={logout} variant="h5" color="inherit">Logout</Button>
+              </Box> :
+               <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                {/* NAVBAR FOR DESKTOP */}
+
+                <NavLink
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/login"
+                >
+                  <MenuItem>
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      component="div"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        p: 1,
+                        m: 1,
+                      }}
+                    >
+                      Login
+                    </Typography>
+                  </MenuItem>
+                </NavLink>
+                <NavLink
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/signup"
+                >
+                  <MenuItem>
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      component="div"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        p: 1,
+                        m: 1,
+                      }}
+                    >
+                      SignUp
+                    </Typography>
+                  </MenuItem>
+                </NavLink>
+              </Box>
+}
             <Box sx={{ display: { xs: "flex", md: "none" } }}>
               <div>
                 <IconButton
@@ -188,7 +246,7 @@ const Navbar = () => {
                         component="div"
                         sx={{
                           display: "flex",
-                          alignItems: "center",
+                         alignItems: "center",
                           p: 1,
                           m: 1,
                         }}
@@ -213,7 +271,7 @@ const Navbar = () => {
                           m: 1,
                         }}
                       >
-                        Shop
+                        Shop1
                       </Typography>
                     </MenuItem>
                   </NavLink>
@@ -237,7 +295,6 @@ const Navbar = () => {
                       </Typography>
                     </MenuItem>
                   </NavLink>
-
                 </Menu>
               </div>
             </Box>
