@@ -6,17 +6,18 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 
+
 function Copyright() {
   return (
     <Box>
       {" "}
-      <Typography variant="body3" color="text.secondary">
+      <Typography variant="body3" color="text.primary">
         {"Copyright © "} {new Date().getFullYear()}{" "}
         <Link color="inherit" href="kaziabdurrakib.com/">
           by KAZI ABDUR RAKIB
         </Link>{" "}
       </Typography>
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body2" color="text.primary">
         All rights reserved.
       </Typography>
     </Box>
@@ -26,11 +27,15 @@ function Copyright() {
 const Footer = () => {
   return (
     <Box
+
       sx={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "50vh",
-        
+        mt: 6,
+        backgroundColor: (theme) =>
+          theme.palette.mode === "light"
+            ? theme.palette.grey[200]
+            : theme.palette.grey[800],
       }}
     >
       <CssBaseline />

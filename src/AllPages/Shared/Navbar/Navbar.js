@@ -63,7 +63,7 @@ const Navbar = () => {
               </NavLink>
               <NavLink
                 style={{ textDecoration: "none", color: "white" }}
-                to="/shop"
+                to="/shops"
               >
                 <MenuItem>
                   <Typography
@@ -77,7 +77,7 @@ const Navbar = () => {
                       m: 1,
                     }}
                   >
-                    ShopN
+                    Shops
                   </Typography>
                 </MenuItem>
               </NavLink>
@@ -257,7 +257,7 @@ const Navbar = () => {
                   </NavLink>
                   <NavLink
                     style={{ textDecoration: "none", color: "black" }}
-                    to="/shop"
+                    to="/shops"
                   >
                     <MenuItem>
                       <Typography
@@ -271,7 +271,7 @@ const Navbar = () => {
                           m: 1,
                         }}
                       >
-                        Shop1
+                        Shops
                       </Typography>
                     </MenuItem>
                   </NavLink>
