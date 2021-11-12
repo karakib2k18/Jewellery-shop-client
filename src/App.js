@@ -2,7 +2,6 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./AllPages/Shared/Navbar/Navbar";
-import Footer from "./AllPages/Shared/Footer/Footer";
 import HomePage from "./AllPages/Home/HomePage/HomePage";
 import Blogs from "./AllPages/Home/Blogs/Blogs";
 import NotFoundPage from "./AllPages/Shared/NotFoundPage/NotFoundPage";
@@ -50,7 +49,6 @@ function App() {
                 <NotFoundPage />
               </Route>
             </Switch>
-          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

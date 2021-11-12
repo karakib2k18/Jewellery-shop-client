@@ -4,12 +4,13 @@ import { CircularProgress, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ShopCard from "./ShopCard";
+import Footer from "../../Shared/Footer/Footer";
 
 const AllShop = () => {
   const [shopslist, setShopslist] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("./shop.json")
+    fetch("http://localhost:5000/shop")
       .then((response) => response.json())
       .then((json) => {
         setShopslist(json);
@@ -17,7 +18,8 @@ const AllShop = () => {
       });
   }, []);
   return (
-    <Container sx={{ border: 0 }} maxWidth="lg">
+<Box>
+<Container sx={{ border: 0 }} maxWidth="lg">
       <Typography variant="h4" gutterBottom component="div" sx={{ my: 4 }}>
         Our All Products
       </Typography>
@@ -34,6 +36,8 @@ const AllShop = () => {
         </Grid>
       </Box>
     </Container>
+    <Footer></Footer>
+</Box>
   );
 };
 

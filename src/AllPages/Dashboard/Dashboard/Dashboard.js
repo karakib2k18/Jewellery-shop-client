@@ -7,7 +7,6 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -19,6 +18,7 @@ import MyOrders from "../MyOrders/MyOrders";
 import AddNewAdmin from "../AddNewAdmin/AddNewAdmin";
 import GiveReview from "../GiveReview/GiveReview";
 import PaymentDetails from "../PaymentDetails/PaymentDetails";
+import AddNewProducts from "../AddNewProducts/AddNewProducts";
 
 const drawerWidth = 210;
 
@@ -36,82 +36,72 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
 
-      <List>
-        <ListItem button>
+      <List  sx={{ p:2 }}>
+
           {/* singlelink */}
           <Link style={{ textDecoration: "none" }} to="/home">
-            <Button sx={{ my: 1 }} variant="contained">
+            <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
               HOME
             </Button>
           </Link>
-        </ListItem>
-        <ListItem button>
+
+
           {/* singlelink */}
-          <Link
-            style={{ textDecoration: "none" }}
-            to={`${url}`}
-          >
-            <Button sx={{ mb: 1 }} variant="contained">
+          <Link style={{ textDecoration: "none" }} to={`${url}`}>
+           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
               Dashboard
             </Button>
           </Link>
-        </ListItem>
-        <ListItem button>
+
+
           {/* singlelink */}
-          <Link
-            style={{ textDecoration: "none" }}
-            to={`${url}/allorders`}
-          >
-            <Button sx={{ mb: 1 }} variant="contained">
+          <Link style={{ textDecoration: "none" }} to={`${url}/addnewproduct`}>
+           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
+              Add Products
+            </Button>
+          </Link>
+
+
+          {/* singlelink */}
+          <Link style={{ textDecoration: "none" }} to={`${url}/allorders`}>
+           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
               All Orders
             </Button>
           </Link>
-        </ListItem>
-        <ListItem button>
+
+
           {/* singlelink */}
-          <Link
-            style={{ textDecoration: "none" }}
-            to={`${url}/myorders`}
-          >
-            <Button sx={{ mb: 1 }} variant="contained">
+          <Link style={{ textDecoration: "none" }} to={`${url}/myorders`}>
+           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
               My Orders
             </Button>
           </Link>
-        </ListItem>
-        <ListItem button>
+
+
           {/* singlelink */}
-          <Link
-            style={{ textDecoration: "none" }}
-            to={`${url}/addnewadmin`}
-          >
-            <Button sx={{ mb: 1 }} variant="contained">
+          <Link style={{ textDecoration: "none" }} to={`${url}/addnewadmin`}>
+           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
               Add New Admin
             </Button>
           </Link>
-        </ListItem>
-        <ListItem button>
+
+
           {/* singlelink */}
-          <Link
-            style={{ textDecoration: "none" }}
-            to={`${url}/givereview`}
-          >
-            <Button sx={{ mb: 1 }} variant="contained">
+          <Link style={{ textDecoration: "none" }} to={`${url}/givereview`}>
+           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
               Give Review
             </Button>
           </Link>
-        </ListItem>
-        <ListItem button>
+
+
           {/* singlelink */}
 
-          <Link
-            style={{ textDecoration: "none" }}
-            to={`${url}/paymentdetails`}
-          >
-            <Button sx={{ mb: 1 }} variant="contained">
+          <Link style={{ textDecoration: "none" }} to={`${url}/paymentdetails`}>
+          <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
               Payment Details
             </Button>
           </Link>
-        </ListItem>
+
       </List>
 
       {/* <List>
@@ -121,7 +111,7 @@ function Dashboard(props) {
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
-          </ListItem>
+  
         ))}
       </List> */}
       {/* all menus left side */}
@@ -210,6 +200,9 @@ function Dashboard(props) {
           </Route>
           <Route path={`${path}/myorders`}>
             <MyOrders />
+          </Route>
+          <Route path={`${path}/addnewproduct`}>
+            <AddNewProducts />
           </Route>
           <Route path={`${path}/addnewadmin`}>
             <AddNewAdmin />

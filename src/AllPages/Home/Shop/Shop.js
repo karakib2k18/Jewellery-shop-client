@@ -9,7 +9,7 @@ const Shop = () => {
   const [shopslist, setShopslist] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("./shop.json")
+    fetch("http://localhost:5000/shop")
       .then((response) => response.json())
       .then((json) => {
         setShopslist(json);

@@ -5,7 +5,7 @@ import MobileStepper from "@mui/material/MobileStepper";
 import Typography from "@mui/material/Typography";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { CircularProgress} from "@mui/material";
+import { CircularProgress, Rating} from "@mui/material";
 
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -14,7 +14,7 @@ function Review() {
   const [reviewList, setReviewList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("./shopblogs.json")
+    fetch("http://localhost:5000/review")
       .then((response) => response.json())
       .then((json) => {
         setReviewList(json);
@@ -32,7 +32,7 @@ function Review() {
   return (
     <Box>
       <Typography variant="h4" noWrap component="div" sx={{ py: 2, m: 1 }}>
-        Client Testimonials What they say
+        Client Testimonials
       </Typography>
       <Typography variant="h5" noWrap component="div" sx={{ pb: 2, m: 1 }}>
         What they say
@@ -67,16 +67,17 @@ function Review() {
                 variant="h6"
                 noWrap
                 component="div"
-                sx={{ py: 2, m: 1 }}
+                sx={{ pb: 2, m: 1 }}
               >
-                {review.name}
+                {/* {review?.ratings} */}
               </Typography>
+              <Rating name="read-only" value={review?.ratings} readOnly />
               <Typography
                 variant="h6"
                 component="div"
                 sx={{ py: 1, m: 1 }}
               >
-                {review.description}
+                {review?.description}
               </Typography>
             </div>
           ))}

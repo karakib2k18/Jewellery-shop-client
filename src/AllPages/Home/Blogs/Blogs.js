@@ -4,12 +4,13 @@ import { CircularProgress, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import BlogsCard from "./BlogsCard";
+import Footer from "../../Shared/Footer/Footer";
 
 const Blogs = () => {
   const [blogslist, setBlogsslist] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("./shopblogs.json")
+    fetch("http://localhost:5000/blogs")
       .then((response) => response.json())
       .then((json) => {
         setBlogsslist(json);
@@ -17,7 +18,8 @@ const Blogs = () => {
       });
   }, []);
   return (
-    <Container sx={{ border: 0 }} maxWidth="lg">
+<Box>
+<Container sx={{ border: 0 }} maxWidth="lg">
       <Typography variant="h4" gutterBottom component="div" sx={{ my: 4 }}>
         Blogs Page
       </Typography>
@@ -34,6 +36,8 @@ const Blogs = () => {
         </Grid>
       </Box>
     </Container>
+    <Footer></Footer>
+</Box>
   );
 };
 
