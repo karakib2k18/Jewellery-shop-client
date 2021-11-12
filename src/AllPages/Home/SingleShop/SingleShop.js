@@ -30,6 +30,7 @@ const SingleShop = () => {
   const { register, handleSubmit, reset } = useForm();
   //send data to the server
   const onSubmit = (data) => {
+    data.status = 'Pending';
     console.log(data);
     swal({
       title: "Do you want to Place Order?",

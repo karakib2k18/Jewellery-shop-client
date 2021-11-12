@@ -19,10 +19,13 @@ import AddNewAdmin from "../AddNewAdmin/AddNewAdmin";
 import GiveReview from "../GiveReview/GiveReview";
 import PaymentDetails from "../PaymentDetails/PaymentDetails";
 import AddNewProducts from "../AddNewProducts/AddNewProducts";
+import useAuth from "../../../hooks/useAuth";
+import AdminRoute from "../../Shared/AdminRoute/AdminRoute";
 
 const drawerWidth = 210;
 
 function Dashboard(props) {
+  const { logout, admin } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
@@ -36,72 +39,119 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
 
-      <List  sx={{ p:2 }}>
+      <List sx={{ p: 2 }}>
+        {/* singlelink */}
+        <Link style={{ textDecoration: "none" }} to="/home">
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+          >
+            HOME
+          </Button>
+        </Link>
 
-          {/* singlelink */}
-          <Link style={{ textDecoration: "none" }} to="/home">
-            <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              HOME
-            </Button>
-          </Link>
+        {/* singlelink */}
+        <Link style={{ textDecoration: "none" }} to={`${url}`}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+          >
+            Dashboard
+          </Button>
+        </Link>
 
+        {/* singlelink */}
+        <Link style={{ textDecoration: "none" }} to={`${url}/myorders`}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+          >
+            My Orders
+          </Button>
+        </Link>
 
-          {/* singlelink */}
-          <Link style={{ textDecoration: "none" }} to={`${url}`}>
-           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              Dashboard
-            </Button>
-          </Link>
+        {/* singlelink */}
+        <Link style={{ textDecoration: "none" }} to={`${url}/givereview`}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+          >
+            Give Review
+          </Button>
+        </Link>
 
+        {admin && (
+          <Box>
+            {" "}
+            {/* singlelink */}
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`${url}/addnewproduct`}
+            >
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+              >
+                Add Products
+              </Button>
+            </Link>
+            {/* singlelink */}
+            <Link style={{ textDecoration: "none" }} to={`${url}/allorders`}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+              >
+                All Orders
+              </Button>
+            </Link>
+            {/* singlelink */}
+            <Link style={{ textDecoration: "none" }} to={`${url}/addnewadmin`}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+              >
+                Add New Admin
+              </Button>
+            </Link>
+          </Box>
+        )}
 
-          {/* singlelink */}
-          <Link style={{ textDecoration: "none" }} to={`${url}/addnewproduct`}>
-           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              Add Products
-            </Button>
-          </Link>
+        {/* singlelink */}
 
-
-          {/* singlelink */}
-          <Link style={{ textDecoration: "none" }} to={`${url}/allorders`}>
-           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              All Orders
-            </Button>
-          </Link>
-
-
-          {/* singlelink */}
-          <Link style={{ textDecoration: "none" }} to={`${url}/myorders`}>
-           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              My Orders
-            </Button>
-          </Link>
-
-
-          {/* singlelink */}
-          <Link style={{ textDecoration: "none" }} to={`${url}/addnewadmin`}>
-           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              Add New Admin
-            </Button>
-          </Link>
-
-
-          {/* singlelink */}
-          <Link style={{ textDecoration: "none" }} to={`${url}/givereview`}>
-           <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              Give Review
-            </Button>
-          </Link>
-
-
-          {/* singlelink */}
-
-          <Link style={{ textDecoration: "none" }} to={`${url}/paymentdetails`}>
-          <Button type="submit"  fullWidth variant="contained" sx={{ mt: 1, mb: 1, fontWeight: "bold" }}>
-              Payment Details
-            </Button>
-          </Link>
-
+        <Link style={{ textDecoration: "none" }} to={`${url}/paymentdetails`}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+          >
+            Payment Details
+          </Button>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/">
+          <Button
+            onClick={logout}
+            fullWidth
+            variant="contained"
+            sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+          >
+            LogOut
+          </Button>
+        </Link>
       </List>
 
       {/* <List>
@@ -195,18 +245,18 @@ function Dashboard(props) {
           <Route exact path={path}>
             <DashboardHome></DashboardHome>
           </Route>
-          <Route path={`${path}/allorders`}>
+          <AdminRoute path={`${path}/allorders`}>
             <AllOrders />
-          </Route>
+          </AdminRoute>
           <Route path={`${path}/myorders`}>
             <MyOrders />
           </Route>
-          <Route path={`${path}/addnewproduct`}>
+          <AdminRoute path={`${path}/addnewproduct`}>
             <AddNewProducts />
-          </Route>
-          <Route path={`${path}/addnewadmin`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/addnewadmin`}>
             <AddNewAdmin />
-          </Route>
+          </AdminRoute>
           <Route path={`${path}/givereview`}>
             <GiveReview />
           </Route>

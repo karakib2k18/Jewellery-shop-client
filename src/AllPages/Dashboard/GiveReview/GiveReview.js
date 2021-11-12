@@ -60,7 +60,7 @@ const GiveReview = () => {
   return (
     <Container sx={{ border: 0, mt: 4 }} maxWidth="lg">
       <Typography gutterBottom variant="h5" component="div">
-        ADD A NEW PRODUCT
+        ADD A NEW REVIEW
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={3}></Grid>
@@ -163,7 +163,7 @@ const GiveReview = () => {
               variant="contained"
               sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
             >
-              ADD PRODUCT
+              ADD REVIEW
             </Button>
           </form>
         </Grid>

@@ -10,8 +10,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import Container from "@mui/material/Container";
 import useAuth from "../../../hooks/useAuth";
-import { Button } from "@mui/material";
-
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -155,7 +153,27 @@ const Navbar = () => {
                     </Typography>
                   </MenuItem>
                 </NavLink>
-                <Button onClick={logout} variant="h5" color="inherit">Logout</Button>
+                <NavLink
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/dashboard"
+                >
+                  <MenuItem>
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      component="div"
+                      onClick={logout} 
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        p: 1,
+                        m: 1,
+                      }}
+                    >
+                      Logout
+                    </Typography>
+                  </MenuItem>
+                </NavLink>
               </Box> :
                <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 {/* NAVBAR FOR DESKTOP */}

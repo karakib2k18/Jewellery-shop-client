@@ -45,7 +45,7 @@ const AllOrders = () => {
               setAllOrdersList(remaining);
               swal("You have Successfully Delete Orders!", "Well Done!", {
                 icon: "success",
-                timer: 1200,
+                timer: 1220,
               });
             }
           });
@@ -63,20 +63,20 @@ const AllOrders = () => {
             {isLoading && <CircularProgress />}
             <TableHead>
               <TableRow>
-                <TableCell sx={{ fontSize: 20 }}>Name</TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="center">
+                <TableCell sx={{ fontSize: 22 }}>Name</TableCell>
+                <TableCell sx={{ fontSize: 22 }} align="center">
+                  Email
+                </TableCell>
+                <TableCell sx={{ fontSize: 22 }} align="right">
                   Title
                 </TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
-                  Status
-                </TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
+                <TableCell sx={{ fontSize: 22 }} align="right">
                   Price
                 </TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
-                  status
+                <TableCell sx={{ fontSize: 22 }} align="right">
+                  Status
                 </TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
+                <TableCell sx={{ fontSize: 22 }} align="right">
                   
                 </TableCell>
               </TableRow>
@@ -90,11 +90,11 @@ const AllOrders = () => {
                   <TableCell component="th" scope="row">
                     {allOrder?.fullname}
                   </TableCell>
-                  <TableCell align="right">{allOrder?.email}</TableCell>
-                  <TableCell align="right">{allOrder?.pdname}</TableCell>
-                  <TableCell align="right">{allOrder?.pdprice}</TableCell>
-                  <TableCell align="right">{allOrder?.status}</TableCell>
-                  <TableCell align="right">
+                  <TableCell sx={{ fontSize: 18 }} align="right">{allOrder?.email}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">{allOrder?.pdname}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">${allOrder?.pdprice}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">{allOrder?.status}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">
 
                     <Button
                       type="submit"

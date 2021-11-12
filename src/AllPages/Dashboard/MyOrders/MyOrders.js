@@ -11,7 +11,7 @@ import swal from "sweetalert";
 import useAuth from "../../../hooks/useAuth";
 
 const MyOrders = () => {
-    const {user} = useAuth();
+  const { user } = useAuth();
   const [myOrdersList, setMyOrdersList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
@@ -47,7 +47,7 @@ const MyOrders = () => {
               setMyOrdersList(remaining);
               swal("You have Successfully Delete Orders!", "Well Done!", {
                 icon: "success",
-                timer: 1200,
+                timer: 1220,
               });
             }
           });
@@ -64,40 +64,42 @@ const MyOrders = () => {
             {isLoading && <CircularProgress />}
             <TableHead>
               <TableRow>
-                <TableCell sx={{ fontSize: 20 }}>Name</TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
+                <TableCell sx={{ fontSize: 22 }}>Name</TableCell>
+                <TableCell sx={{ fontSize: 22 }} align="center">
+                  Email
+                </TableCell>
+                <TableCell sx={{ fontSize: 22 }} align="right">
                   Title
                 </TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
-                  Status
-                </TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
+                <TableCell sx={{ fontSize: 22 }} align="right">
                   Price
                 </TableCell>
-                <TableCell sx={{ fontSize: 20 }} align="right">
-                  role
+                <TableCell sx={{ fontSize: 22 }} align="right">
+                  Status
                 </TableCell>
+                <TableCell sx={{ fontSize: 22 }} align="right"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {myOrdersList?.map((allOrder) => (
+              {myOrdersList?.map((myOrder) => (
                 <TableRow
-                  key={allOrder?.name}
+                  key={myOrder?.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
-                    {allOrder?.fullname}
+                    {myOrder?.fullname}
                   </TableCell>
-                  <TableCell align="right">{allOrder?.email}</TableCell>
-                  <TableCell align="right">{allOrder?.pdname}</TableCell>
-                  <TableCell align="right">{allOrder?.pdprice}</TableCell>
-                  <TableCell align="right">
+                  <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.email}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.pdname}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">${myOrder?.pdprice}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.status}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">
                     <Button
                       type="submit"
                       id="customize-delete-id-byme"
                       variant="contained"
-                      sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
-                      onClick={() => handleDeleteButton(allOrder?._id)}
+                      sx={{ m: 1, mb: 1, fontWeight: "bold" }}
+                      onClick={() => handleDeleteButton(myOrder?._id)}
                     >
                       Delete
                     </Button>
