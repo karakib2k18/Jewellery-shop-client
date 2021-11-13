@@ -30,7 +30,7 @@ const AllOrders = () => {
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={1}></Grid>
-        <Grid item xs={12} sm={10}>
+        <Grid item xs={12} sm={12}>
           <TableContainer component={Paper}>
             <Table size="large" aria-label="a dense table">
               {isLoading && <CircularProgress />}
@@ -40,13 +40,19 @@ const AllOrders = () => {
                   <TableCell sx={{ fontSize: 22 }} align="center">
                     Email
                   </TableCell>
-                  <TableCell sx={{ fontSize: 22 }} align="right">
+                  <TableCell sx={{ fontSize: 22 }} align="center">
+                  Phone
+                  </TableCell>
+                  <TableCell sx={{ fontSize: 22 }} align="center">
+                  Address
+                  </TableCell>
+                  <TableCell sx={{ fontSize: 22 }} align="center">
                     Title
                   </TableCell>
                   <TableCell sx={{ fontSize: 22 }} align="right">
                     Price
                   </TableCell>
-                  <TableCell sx={{ fontSize: 22 }} align="right">
+                  <TableCell sx={{ fontSize: 22 }} align="center">
                     Status
                   </TableCell>
                   <TableCell sx={{ fontSize: 22 }} align="right"></TableCell>

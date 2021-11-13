@@ -101,10 +101,16 @@ const AllOrdersTable = (props) => {
       <TableCell component="th" scope="row" sx={{fontWeight: "bold"}}>
         {allOrder?.fullname}
       </TableCell>
-      <TableCell sx={{ fontSize: 18 }} align="right">
+      <TableCell sx={{ fontSize: 18 }} align="center">
         {allOrder?.email}
       </TableCell>
-      <TableCell sx={{ fontSize: 18 }} align="right">
+      <TableCell sx={{ fontSize: 18 }} align="center">
+        {allOrder?.phone}
+      </TableCell>
+      <TableCell sx={{ fontSize: 18 }} align="center">
+        {allOrder?.address}
+      </TableCell>
+      <TableCell sx={{ fontSize: 18 }} align="center">
         {allOrder?.pdname}
       </TableCell>
       <TableCell sx={{ fontSize: 18 }} align="right">
