@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
@@ -6,9 +6,11 @@ import useAuth from "../../../hooks/useAuth";
 const DashboardHome = () => {
   const { user } = useAuth();
   return (
+    <Container sx={{ border: 0, mt: 4 }} maxWidth="lg">
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={12}>
-        {user.photoURL && (
+      <Grid item xs={12} sm={2}></Grid>
+      <Grid item xs={12} sm={8}>
+      {user.photoURL && (
           <Box
             component="img"
             sx={{
@@ -41,7 +43,10 @@ const DashboardHome = () => {
           WELCOME TO DASHBOARD
         </Typography>
       </Grid>
+      <Grid item xs={12} sm={2}></Grid>
     </Grid>
+  </Container>
+
   );
 };
 
