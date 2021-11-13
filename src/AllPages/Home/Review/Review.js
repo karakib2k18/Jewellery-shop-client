@@ -51,9 +51,9 @@ function Review() {
                 <Box
                   component="img"
                   sx={{
-                    height: 170,
+                    height: 130,
                     display: "block",
-                    maxWidth: 170,
+                    maxWidth: 130,
                     overflow: "hidden",
                     width: "100%",
                     mx: "auto" ,

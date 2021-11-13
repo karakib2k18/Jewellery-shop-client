@@ -17,7 +17,7 @@ const SingleShopCard = ({shop}) => {
         <Card sx={{ maxWidth: 420, borderRadius: 8, p:2 }}>
           <CardMedia
             component="img"
-            sx={{ width: "75%", height: "75%", mx: "auto" }}
+            sx={{ width: "50%", height: "50%", mx: "auto" }}
             image={shop?.image}
             alt="green iguana"
           />

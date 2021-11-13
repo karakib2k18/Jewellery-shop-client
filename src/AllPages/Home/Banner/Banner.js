@@ -9,7 +9,13 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
+    imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner3-1920x600.jpg",
+  },
+  {
     imgPath: "https://i.ibb.co/BVZdGsX/banner1.jpg",
+  },
+  {
+    imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner1-1920x600.jpg",
   },
   {
     imgPath: "https://i.ibb.co/0JTw758/banner3.jpg",
@@ -55,7 +61,7 @@ function Banner() {
                 <Box
                   component="img"
                   sx={{
-                    height: 555,
+                    height: 500,
                     display: "block",
                     // maxWidth: 400,
                     overflow: "hidden",

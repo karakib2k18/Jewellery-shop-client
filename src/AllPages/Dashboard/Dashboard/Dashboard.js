@@ -48,7 +48,7 @@ function Dashboard(props) {
             variant="contained"
             sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
           >
-            HOME
+           GO BACK HOME
           </Button>
         </Link>
 

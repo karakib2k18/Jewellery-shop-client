@@ -5,9 +5,15 @@ import { Container, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
+// import { useHistory, useLocation } from "react-router";
 
 const AddNewAdmin = () => {
+
   const { register, handleSubmit, reset } = useForm();
+  // const history = useHistory();
+  // const location = useLocation();
+  // history.replace(history?.location?.pathname);
+  // console.log("locairto222n" ,history?.location?.pathname)
 
   //send data to the server
   const onSubmit = (data) => {
@@ -35,7 +41,7 @@ const AddNewAdmin = () => {
                 timer: 1300,
               });
               reset();
-              //   history.push("/home");
+              
             }
           })
           .catch((error) => {

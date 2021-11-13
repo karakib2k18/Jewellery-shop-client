@@ -16,7 +16,7 @@ const BlogsCard = ({blog}) => {
         <Card sx={{ maxWidth: 420, borderRadius: 8, p:2 }}>
           <CardMedia
             component="img"
-            sx={{ width: "75%", height: "75%", mx: "auto" }}
+            sx={{ width: "50%", height: "50%", mx: "auto" }}
             image={blog?.image}
             alt="green iguana"
           />
@@ -25,7 +25,7 @@ const BlogsCard = ({blog}) => {
               {blog?.name}
             </Typography>
             <Typography variant="h6" color="text.primary">
-              {blog?.description}
+              {blog?.description.slice(0, 100)}
             </Typography>
           </CardContent>
           <CardContent>

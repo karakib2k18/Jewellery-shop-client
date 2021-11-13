@@ -10,6 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import Container from "@mui/material/Container";
 import useAuth from "../../../hooks/useAuth";
+import { Avatar } from "@mui/material";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -22,6 +23,15 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const [anchorElp, setAnchorElp] = React.useState(null);
+
+  const handleMenup = (event) => {
+    setAnchorElp(event.currentTarget);
+  };
+
+  const handleClosep = () => {
+    setAnchorElp(null);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -32,10 +42,158 @@ const Navbar = () => {
               variant="h6"
               noWrap
               component="div"
-              // sx={{ display: { xs: "none", sm: "block" } }}
+              sx={{ display: { xs: "none", sm: "block" } }}
             >
               RAKIB-JEWELLERS
             </Typography>
+
+                        {/* for mobile version */}
+
+                        <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <div>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                  sx={{
+                    display: { xs: "block", sm: "none" },
+                    mt: "32px",
+                    px: "20px",
+                  }}
+                >
+                  {/* NAVBAR FOR DESKTOP */}
+                  <NavLink
+                    style={{ textDecoration: "none", color: "black" }}
+                    to="/home"
+                  >
+                    <MenuItem>
+                      <Typography
+                        onClick={handleClose}
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          m: 1,
+                        }}
+                      >
+                        Home
+                      </Typography>
+                    </MenuItem>
+                  </NavLink>
+                  <NavLink
+                    style={{ textDecoration: "none", color: "black" }}
+                    to="/shops"
+                  >
+                    <MenuItem>
+                      <Typography
+                        onClick={handleClose}
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          m: 1,
+                        }}
+                      >
+                        Shops
+                      </Typography>
+                    </MenuItem>
+                  </NavLink>
+                  <NavLink
+                    style={{ textDecoration: "none", color: "black" }}
+                    to="/blogs"
+                  >
+                    <MenuItem>
+                      <Typography
+                        onClick={handleClose}
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          m: 1,
+                        }}
+                      >
+                        Blogs
+                      </Typography>
+                    </MenuItem>
+                  </NavLink>
+                  {(user?.displayName || user?.email) && (
+                    <Box>
+                      {/* NAVBAR FOR DESKTOP */}
+                      <NavLink
+                        style={{ textDecoration: "none", color: "black" }}
+                        to="/dashboard"
+                      >
+                        <MenuItem>
+                          <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              m: 1,
+                            }}
+                          >
+                            Dashboard
+                          </Typography>
+                        </MenuItem>
+                      </NavLink>
+                      <NavLink
+                        style={{ textDecoration: "none", color: "black" }}
+                        to="/dashboard"
+                      >
+                        <MenuItem>
+                          <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            onClick={logout}
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              m: 1,
+                            }}
+                          >
+                            Logout
+                          </Typography>
+                        </MenuItem>
+                      </NavLink>
+                    </Box>
+                  )}
+                </Menu>
+              </div>
+            </Box>
+
+            {/* for mobile version end here */}
+
+
+
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               {/* NAVBAR FOR DESKTOP */}
 
@@ -102,37 +260,11 @@ const Navbar = () => {
             </Box>
 
             <Box sx={{ flexGrow: 1 }}></Box>
-            
-            {user?.displayName || user?.email ?
+
+            {/* if login the all button show in desktop */}
+            {(user?.displayName || user?.email) && (
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 {/* NAVBAR FOR DESKTOP */}
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      p: 1,
-                      m: 1,
-                    }}
-                  >
-                    {user.displayName}
-
-                  </Typography>
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      p: 1,
-                      m: 1,
-                    }}
-                  >
-                    {user.email}
-                  </Typography>
                 <NavLink
                   style={{ textDecoration: "none", color: "white" }}
                   to="/dashboard"
@@ -162,7 +294,7 @@ const Navbar = () => {
                       variant="h6"
                       noWrap
                       component="div"
-                      onClick={logout} 
+                      onClick={logout}
                       sx={{
                         display: "flex",
                         alignItems: "center",
@@ -174,8 +306,11 @@ const Navbar = () => {
                     </Typography>
                   </MenuItem>
                 </NavLink>
-              </Box> :
-               <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              </Box>
+            )}
+            {/* if not login then login singup show in desktop */}
+            {!(user?.displayName || user?.email) && (
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 {/* NAVBAR FOR DESKTOP */}
 
                 <NavLink
@@ -219,22 +354,19 @@ const Navbar = () => {
                   </MenuItem>
                 </NavLink>
               </Box>
-}
-            <Box sx={{ display: { xs: "flex", md: "none" } }}>
-              <div>
-                <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleMenu}
-                  color="inherit"
-                >
-                  <MenuIcon />
-                </IconButton>
+            )}
+            {/* if login the picture and details show in desktop */}
+            {(user?.displayName || user?.email) && (
+              <Box >
+                <Avatar
+                  alt="Remy Sharp"
+                  src={user?.photoURL}
+                  onClick={handleMenup}
+                />
                 <Menu
+                  sx={{ mt: "45px" }}
                   id="menu-appbar"
-                  anchorEl={anchorEl}
+                  anchorEl={anchorElp}
                   anchorOrigin={{
                     vertical: "top",
                     horizontal: "right",
@@ -244,78 +376,15 @@ const Navbar = () => {
                     vertical: "top",
                     horizontal: "right",
                   }}
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                  sx={{
-                    display: { xs: "block", sm: "none" },
-                    mt: "32px",
-                    px: "20px",
-                  }}
+                  open={Boolean(anchorElp)}
+                  onClose={handleClosep}
                 >
-                  {/* NAVBAR FOR DESKTOP */}
-                  <NavLink
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/home"
-                  >
-                    <MenuItem>
-                      <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{
-                          display: "flex",
-                         alignItems: "center",
-                          p: 1,
-                          m: 1,
-                        }}
-                      >
-                        Home
-                      </Typography>
-                    </MenuItem>
-                  </NavLink>
-                  <NavLink
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/shops"
-                  >
-                    <MenuItem>
-                      <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          p: 1,
-                          m: 1,
-                        }}
-                      >
-                        Shops
-                      </Typography>
-                    </MenuItem>
-                  </NavLink>
-                  <NavLink
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/blogs"
-                  >
-                    <MenuItem>
-                      <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          p: 1,
-                          m: 1,
-                        }}
-                      >
-                        Blogs
-                      </Typography>
-                    </MenuItem>
-                  </NavLink>
+                  <MenuItem onClick={handleClosep}>{user?.displayName}</MenuItem>
+                  <MenuItem onClick={handleClosep}>{user?.email}</MenuItem>
                 </Menu>
-              </div>
-            </Box>
+              </Box>
+            )}
+
           </Toolbar>
         </Container>
       </AppBar>

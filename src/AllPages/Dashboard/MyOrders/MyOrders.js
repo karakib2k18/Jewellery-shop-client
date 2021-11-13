@@ -6,9 +6,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Button, CircularProgress, Grid } from "@mui/material";
+import { Button, CircularProgress, Grid, Typography } from "@mui/material";
 import swal from "sweetalert";
 import useAuth from "../../../hooks/useAuth";
+import { Box } from "@mui/system";
 
 const MyOrders = () => {
   const { user } = useAuth();
@@ -56,6 +57,10 @@ const MyOrders = () => {
   };
 
   return (
+    <Box>
+    <Typography  sx={{mb:5}} gutterBottom variant="h5" component="div">
+     My Orders
+    </Typography>
     <Grid container spacing={2}>
       <Grid item xs={12} sm={1}></Grid>
       <Grid item xs={12} sm={10}>
@@ -112,6 +117,7 @@ const MyOrders = () => {
       </Grid>
       <Grid item xs={12} sm={1}></Grid>
     </Grid>
+    </Box>
   );
 };
 

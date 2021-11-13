@@ -1,4 +1,4 @@
-# Getting Started with Jewellery related App [ click here to see live demo](https://rakib-jewellers.firebaseapp.com/)
+# Getting Started with RAKIB-Jewellers [ click here to see live demo](https://rakib-jewellers.firebaseapp.com/)
 
 ### This project was created with  using Meterial UI, React, React-Hook-form, firebase, react-routerdom@5, node, express, mongodb etc.
 
