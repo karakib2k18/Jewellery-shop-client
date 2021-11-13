@@ -133,9 +133,6 @@ const Footer = () => {
                 <Typography variant="h6" gutterBottom component="div">
                   London, UK
                 </Typography>
-                <Typography variant="h6" gutterBottom component="div">
-                  rakibjewellers@gmail.com
-                </Typography>
               </Typography>
             </Grid>
           </Grid>

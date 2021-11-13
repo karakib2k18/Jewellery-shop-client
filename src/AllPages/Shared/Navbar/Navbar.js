@@ -142,6 +142,52 @@ const Navbar = () => {
                       </Typography>
                     </MenuItem>
                   </NavLink>
+                  {!(user?.displayName || user?.email) && (
+              <Box>
+                {/* NAVBAR FOR DESKTOP */}
+
+                <NavLink
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/login"
+                >
+                  <MenuItem>
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      component="div"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        p: 1,
+                        m: 1,
+                      }}
+                    >
+                      Login
+                    </Typography>
+                  </MenuItem>
+                </NavLink>
+                <NavLink
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/signup"
+                >
+                  <MenuItem>
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      component="div"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        p: 1,
+                        m: 1,
+                      }}
+                    >
+                      SignUp
+                    </Typography>
+                  </MenuItem>
+                </NavLink>
+              </Box>
+            )}
                   {(user?.displayName || user?.email) && (
                     <Box>
                       {/* NAVBAR FOR DESKTOP */}
