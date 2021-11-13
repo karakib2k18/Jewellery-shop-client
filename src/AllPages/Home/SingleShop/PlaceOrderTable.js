@@ -15,7 +15,7 @@ const PlaceOrderTable = (props) => {
   //send data to the server
   const onSubmit = (data) => {
     data.status = "Pending";
-    console.log(data);
+    // console.log(data);
     swal({
       title: "Do you want to Place Order?",
       icon: "warning",
@@ -23,7 +23,7 @@ const PlaceOrderTable = (props) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("http://localhost:5000/orders", {
+        fetch("https://tranquil-anchorage-09740.herokuapp.com/orders", {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",

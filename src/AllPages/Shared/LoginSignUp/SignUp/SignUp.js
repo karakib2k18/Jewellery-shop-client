@@ -22,7 +22,7 @@ const SignUp = () => {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    console.log(data)
+    // console.log(data)
   //   if (data.password !== data.password2) {
   //     alert('Your password did not match');
   //     return

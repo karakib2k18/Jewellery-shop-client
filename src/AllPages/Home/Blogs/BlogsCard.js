@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const BlogsCard = ({blog}) => {
     // const url = `/singleblog/${blog?._id}`;
-    console.log(blog)
+    // console.log(blog)
     return (
         <Grid item xs={4} sm={4} md={4}>
         <Card sx={{ maxWidth: 420, borderRadius: 8, p:2 }}>

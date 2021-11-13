@@ -11,7 +11,7 @@ const SingleShop = () => {
   const [singleshopslist, setSingleShopslist] = React.useState({});
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("http://localhost:5000/shop")
+    fetch("https://tranquil-anchorage-09740.herokuapp.com/shop")
       .then((response) => response.json())
       .then((data) => {
         // setSingleShopslist(data);

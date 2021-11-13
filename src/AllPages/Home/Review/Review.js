@@ -14,7 +14,7 @@ function Review() {
   const [reviewList, setReviewList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://tranquil-anchorage-09740.herokuapp.com/review")
       .then((response) => response.json())
       .then((json) => {
         setReviewList(json);

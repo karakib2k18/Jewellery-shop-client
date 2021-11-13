@@ -16,7 +16,7 @@ const AllOrdersTable = (props) => {
 
   const handleEditButton = (id) => {
     // reset();
-    fetch(`http://localhost:5000/orders/${id}`)
+    fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -30,9 +30,9 @@ const AllOrdersTable = (props) => {
     let updateStatus = { ...userUpdate };
     updateStatus.status = data.status;
     setUserUpdate(updateStatus);
-    console.log(updateStatus);
+    // console.log(updateStatus);
 
-    const url = `http://localhost:5000/orders/${data._id}`;
+    const url = `https://tranquil-anchorage-09740.herokuapp.com/orders/${data._id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -59,7 +59,7 @@ const AllOrdersTable = (props) => {
   };
 
   const handleDeleteButton = (id) => {
-    console.log(allOrdersList._id);
+    // console.log(allOrdersList._id);
     swal({
       title: "Do you want delete?",
       icon: "warning",
@@ -67,7 +67,7 @@ const AllOrdersTable = (props) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

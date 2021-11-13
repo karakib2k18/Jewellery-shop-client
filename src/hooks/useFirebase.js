@@ -43,7 +43,7 @@ const useFirebase = () => {
         })
         .catch((error) => {
             setAuthError(error.message);
-            console.log(error);
+            // console.log(error);
         })
         .finally(() => setIsLoading(false));
 }
@@ -105,7 +105,7 @@ const useFirebase = () => {
   };
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://tranquil-anchorage-09740.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -115,7 +115,7 @@ const useFirebase = () => {
   };
   // admin gmail laod
   useEffect(() => {
-    fetch(`http://localhost:5000/isadmin/${user.email}`)
+    fetch(`https://tranquil-anchorage-09740.herokuapp.com/isadmin/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
 }, [user.email])

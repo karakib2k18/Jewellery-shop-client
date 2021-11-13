@@ -11,7 +11,7 @@ const AddNewProducts = () => {
 
   //send data to the server
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     swal({
       title: "Do you want to add a new Product?",
       icon: "warning",
@@ -19,7 +19,7 @@ const AddNewProducts = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("http://localhost:5000/shop", {
+        fetch("https://tranquil-anchorage-09740.herokuapp.com/shop", {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",

@@ -16,7 +16,7 @@ const MyOrders = () => {
   const [myOrdersList, setMyOrdersList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch(`http://localhost:5000/myorders/${user.email}`)
+    fetch(`https://tranquil-anchorage-09740.herokuapp.com/myorders/${user.email}`)
       .then((response) => response.json())
       .then((json) => {
         setMyOrdersList(json);
@@ -25,7 +25,7 @@ const MyOrders = () => {
   }, [user.email]);
 
   const handleDeleteButton = (id) => {
-    console.log(id);
+    // console.log(id);
     swal({
       title: "Do you want delete?",
       icon: "warning",
@@ -33,7 +33,7 @@ const MyOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

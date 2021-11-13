@@ -15,7 +15,7 @@ const AllOrders = () => {
   const [allOrdersList, setAllOrdersList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://tranquil-anchorage-09740.herokuapp.com/orders")
       .then((response) => response.json())
       .then((json) => {
         setAllOrdersList(json);

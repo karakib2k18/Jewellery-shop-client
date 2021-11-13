@@ -26,7 +26,7 @@ const ManageAllProductsCard = (props) => {
           dangerMode: true,
         }).then((willDelete) => {
           if (willDelete) {
-            fetch(`http://localhost:5000/shop/${id}`, {
+            fetch(`https://tranquil-anchorage-09740.herokuapp.com/shop/${id}`, {
               method: "DELETE",
               headers: {
                 "Content-Type": "application/json",

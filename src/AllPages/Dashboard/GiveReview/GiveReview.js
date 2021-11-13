@@ -18,7 +18,7 @@ const GiveReview = () => {
 
   //send data to the server
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     swal({
       title: "Do you want to add a Review?",
       icon: "warning",
@@ -26,7 +26,7 @@ const GiveReview = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("http://localhost:5000/review", {
+        fetch("https://tranquil-anchorage-09740.herokuapp.com/review", {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",

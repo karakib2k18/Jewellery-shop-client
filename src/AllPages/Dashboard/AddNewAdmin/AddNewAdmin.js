@@ -25,7 +25,7 @@ const AddNewAdmin = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("http://localhost:5000/users/admin", {
+        fetch("https://tranquil-anchorage-09740.herokuapp.com/users/admin", {
           method: "PUT", // or 'PUT'
           headers: {
             "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const AddNewAdmin = () => {
           .then((response) => response.json())
           .then((data) => {
             if (data.modifiedCount) {
-                console.log(data);
+                // console.log(data);
               swal("You have Added a Admin", "Well Done!", {
                 icon: "success",
                 timer: 1300,

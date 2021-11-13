@@ -10,7 +10,7 @@ const ManageAllProducts = () => {
   const [shopslist, setShopslist] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("http://localhost:5000/shop")
+    fetch("https://tranquil-anchorage-09740.herokuapp.com/shop")
       .then((response) => response.json())
       .then((json) => {
         setShopslist(json);
