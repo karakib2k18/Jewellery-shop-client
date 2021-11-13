@@ -21,7 +21,7 @@ const AllOrders = () => {
         setAllOrdersList(json);
         setIsLoading(false);
       });
-  }, []);
+  }, [isLoading]);
 
   return (
     <Box>
