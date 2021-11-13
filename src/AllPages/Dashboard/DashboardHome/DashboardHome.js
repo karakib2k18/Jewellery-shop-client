@@ -6,10 +6,9 @@ import useAuth from "../../../hooks/useAuth";
 const DashboardHome = () => {
   const { user } = useAuth();
   return (
-    <Container sx={{ border: 0, mt: 4 }} maxWidth="lg">
+    <Container sx={{ border: 0, mt: 4 }}>
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={2}></Grid>
-      <Grid item xs={12} sm={8}>
+      <Grid item xs={12} sm={12}>
       {user.photoURL && (
           <Box
             component="img"
@@ -33,17 +32,16 @@ const DashboardHome = () => {
       </Typography>
         )}
 
-        <Typography gutterBottom variant="h2" component="div">
+        <Typography gutterBottom variant="h4" component="div">
           hey! {user.displayName}
         </Typography>
-        <Typography gutterBottom variant="h2" component="div">
+        <Typography gutterBottom variant="h4" component="div">
           {user.email}
         </Typography>
-        <Typography gutterBottom variant="h2" component="div">
+        <Typography gutterBottom variant="h4" component="div">
           WELCOME TO DASHBOARD
         </Typography>
       </Grid>
-      <Grid item xs={12} sm={2}></Grid>
     </Grid>
   </Container>
 
