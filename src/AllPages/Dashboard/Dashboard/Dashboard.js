@@ -65,6 +65,9 @@ function Dashboard(props) {
           </Button>
         </Link>
 
+        {!admin && (
+          <Box>
+           
         {/* singlelink */}
         <Link style={{ textDecoration: "none" }} to={`${url}/myorders`}>
           <Button
@@ -88,6 +91,10 @@ function Dashboard(props) {
             Give Review
           </Button>
         </Link>
+
+          </Box>
+        )}
+
 
         {admin && (
           <Box>
@@ -145,17 +152,21 @@ function Dashboard(props) {
         )}
 
         {/* singlelink */}
+        {!admin && (
+         <Link style={{ textDecoration: "none" }} to={`${url}/paymentdetails`}>
+         <Button
+           type="submit"
+           fullWidth
+           variant="contained"
+           sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+         >
+           Payment Now
+         </Button>
+       </Link>
+        )}
 
-        <Link style={{ textDecoration: "none" }} to={`${url}/paymentdetails`}>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
-          >
-            Payment Now
-          </Button>
-        </Link>
+
+
         <Link style={{ textDecoration: "none" }} to="/">
           <Button
             onClick={logout}

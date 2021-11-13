@@ -105,7 +105,9 @@ const MyOrders = () => {
                   <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.address}</TableCell>
                   <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.pdname}</TableCell>
                   <TableCell sx={{ fontSize: 18 }} align="right">${myOrder?.pdprice}</TableCell>
-                  <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.status}</TableCell>
+                  <TableCell id='myorderedit' sx={{ fontSize: 18, p:1 , borderRadius: 1, fontWeight: "bold", color:"white", display: 'inline' , bgcolor: myOrder?.status === "Pending"
+                      // eslint-disable-next-line no-mixed-operators
+                      && 'warning.main' || myOrder?.status === "Deliverd" && 'success.main' || myOrder?.status === "Rejected" && 'error.main' || myOrder?.status === "Shipping" && 'secondary.main' }} align="right">{myOrder?.status}</TableCell>
                   <TableCell sx={{ fontSize: 18 }} align="right">
                     <Button
                       type="submit"

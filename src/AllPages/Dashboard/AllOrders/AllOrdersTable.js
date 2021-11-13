@@ -98,7 +98,7 @@ const AllOrdersTable = (props) => {
       key={allOrder?.name}
       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
     >
-      <TableCell component="th" scope="row">
+      <TableCell component="th" scope="row" sx={{fontWeight: "bold"}}>
         {allOrder?.fullname}
       </TableCell>
       <TableCell sx={{ fontSize: 18 }} align="right">
@@ -111,7 +111,11 @@ const AllOrdersTable = (props) => {
         ${allOrder?.pdprice}
       </TableCell>
       <TableCell sx={{ fontSize: 18 }} align="right">
-        {!updateForm && <Box>{allOrder?.status}</Box>}
+        {!updateForm && <Box
+                      sx={{ p:1 , borderRadius: 1, fontWeight: "bold", color:"white", display: 'inline' , bgcolor: allOrder.status === "Pending"
+                      // eslint-disable-next-line no-mixed-operators
+                      && 'warning.main' || allOrder.status === "Deliverd" && 'success.main' || allOrder.status === "Rejected" && 'error.main' || allOrder.status === "Shipping" && 'secondary.main'}}
+        >{allOrder?.status}</Box>}
 
         {updateForm && (
           <Box>

@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+#myorderedit {
+  line-height: 4.43 !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
