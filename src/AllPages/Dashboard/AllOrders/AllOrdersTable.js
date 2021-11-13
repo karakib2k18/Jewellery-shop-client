@@ -9,22 +9,10 @@ import Select from "@mui/material/Select";
 import { useForm } from "react-hook-form";
 
 const AllOrdersTable = (props) => {
-    const {allOrder} = props ;
+    const {allOrder, setAllOrdersList, allOrdersList,setIsLoading,isLoading} = props ;
   const [updateForm, setupdateForm] = React.useState(false);
   const { register, handleSubmit, reset } = useForm();
   const [userUpdate, setUserUpdate] = React.useState({});
-
-  const [allOrdersList, setAllOrdersList] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    fetch("http://localhost:5000/orders")
-      .then((response) => response.json())
-      .then((json) => {
-        setAllOrdersList(json);
-        setIsLoading(false);
-      });
-  }, []);
 
   const handleEditButton = (id) => {
     // reset();

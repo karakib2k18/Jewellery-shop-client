@@ -21,6 +21,7 @@ import PaymentDetails from "../PaymentDetails/PaymentDetails";
 import AddNewProducts from "../AddNewProducts/AddNewProducts";
 import useAuth from "../../../hooks/useAuth";
 import AdminRoute from "../../Shared/AdminRoute/AdminRoute";
+import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 
 const drawerWidth = 210;
 
@@ -105,6 +106,19 @@ function Dashboard(props) {
                 Add Products
               </Button>
             </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`${url}/manageallproducts`}
+            >
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+              >
+                Manage All Products
+              </Button>
+            </Link>
             {/* singlelink */}
             <Link style={{ textDecoration: "none" }} to={`${url}/allorders`}>
               <Button
@@ -139,7 +153,7 @@ function Dashboard(props) {
             variant="contained"
             sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
           >
-            Payment Details
+            Payment Now
           </Button>
         </Link>
         <Link style={{ textDecoration: "none" }} to="/">
@@ -253,6 +267,9 @@ function Dashboard(props) {
           </Route>
           <AdminRoute path={`${path}/addnewproduct`}>
             <AddNewProducts />
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageallproducts`}>
+            <ManageAllProducts />
           </AdminRoute>
           <AdminRoute path={`${path}/addnewadmin`}>
             <AddNewAdmin />

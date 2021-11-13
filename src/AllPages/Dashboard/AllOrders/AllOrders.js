@@ -55,9 +55,12 @@ const AllOrders = () => {
               <TableBody>
                 {allOrdersList?.map((allOrder) => (
                   <AllOrdersTable
+                  setAllOrdersList={setAllOrdersList}
                     allOrdersList={allOrdersList}
                     allOrder={allOrder}
                     key={allOrder._id}
+                    setIsLoading={setIsLoading}
+                    isLoading={isLoading}
                   ></AllOrdersTable>
                 ))}
               </TableBody>

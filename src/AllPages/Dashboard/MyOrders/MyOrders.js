@@ -73,7 +73,13 @@ const MyOrders = () => {
                 <TableCell sx={{ fontSize: 22 }} align="center">
                   Email
                 </TableCell>
-                <TableCell sx={{ fontSize: 22 }} align="right">
+                <TableCell sx={{ fontSize: 22 }} align="center">
+                  Phone
+                </TableCell>
+                <TableCell sx={{ fontSize: 22 }} align="center">
+                  Address
+                </TableCell>
+                <TableCell sx={{ fontSize: 22 }} align="center">
                   Title
                 </TableCell>
                 <TableCell sx={{ fontSize: 22 }} align="right">
@@ -95,6 +101,8 @@ const MyOrders = () => {
                     {myOrder?.fullname}
                   </TableCell>
                   <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.email}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.phone}</TableCell>
+                  <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.address}</TableCell>
                   <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.pdname}</TableCell>
                   <TableCell sx={{ fontSize: 18 }} align="right">${myOrder?.pdprice}</TableCell>
                   <TableCell sx={{ fontSize: 18 }} align="right">{myOrder?.status}</TableCell>
