@@ -3,20 +3,20 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import Container from "@mui/material/Container";
+// import Container from "@mui/material/Container";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
-  {
-    imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner3-1920x600.jpg",
-  },
+  // {
+  //   imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner3-1920x600.jpg",
+  // },
   {
     imgPath: "https://i.ibb.co/BVZdGsX/banner1.jpg",
   },
-  {
-    imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner1-1920x600.jpg",
-  },
+  // {
+  //   imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner1-1920x600.jpg",
+  // },
   {
     imgPath: "https://i.ibb.co/0JTw758/banner3.jpg",
   },
@@ -39,13 +39,14 @@ function Banner() {
   };
 
   return (
-    <Container sx={{ border: 0 }} maxWidth="xl">
+    <Box sx={{ border: 0 }}>
       <Box
         sx={{
           boxShadow: 3,
           bgcolor: "background.paper",
-          m: 1,
-          p: 1,
+          // m: 1,
+          // p: 1,
+          
         }}
       >
         {" "}
@@ -61,7 +62,7 @@ function Banner() {
                 <Box
                   component="img"
                   sx={{
-                    height: 500,
+                    // height: 500,
                     display: "block",
                     // maxWidth: 400,
                     overflow: "hidden",
@@ -77,7 +78,7 @@ function Banner() {
         
         </AutoPlaySwipeableViews>
       </Box>
-    </Container>
+    </Box>
   );
 }
 
