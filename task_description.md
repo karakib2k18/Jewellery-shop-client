@@ -34,18 +34,10 @@ Our company focused on a Niche website (single product category selling website)
 10. On the `Manage All Orders` page for the admin, the logged in admin will see the orders placed by every user. If multiple users used this website to place orders, everyone's order will be displayed here. Admin can update the status of the order. At the time of placing an order, every order will have a default status: pending. On the Manage All Orders page, an admin will be able to update the status of the pending to `shipped` status. This could be a simple button to update the pending status. (don't over think, this is a simple button to update the status field of an order. Use Id to find the order and set the status to approved). Also, it would be nice if you can do one additonal task here: The admin will be able to delete anyone's order here. Make sure to add a confirmation before deleting. Please note: delete is optional but recommended on this page.
 11. on the `Manage Products` page, an admin can delete any of the products. Please make sure there is a confirmation. After delete that product will not appear on the `explore` page.
 
-### Optional:
-Make sure you have done everything on the main part and bonus. deploy and test everything after that you may try optional things.
-1. payment gateway (paypal or stripe or anything else)
-2. On the `add a product` page, try to implement direct image upload from your computer. This image can be hosted on third part image hosting like imgbb or directly to mongodb
-3. Add a shopping cart and Order review page
-4. pagination. if you implement pagination, you can have duplicate products
-5. Implement `jwt` token.
-6. Manage orders page, add more options like: pending, rejected, shipped. And consider using a select (drop down options). Also, once the status of an item is updated that status is reflected on the 'my orders' page once the user of the order is logged in.
-7. Try to use a better looking confirmation dialogue other than the browser's default confirm.
+12. Manage orders page, add more options like: pending, rejected, shipped. And consider using a select (drop down options). Also, once the status of an item is updated that status is reflected on the 'my orders' page once the user of the order is logged in.
+13. Try to use a better looking confirmation dialogue other than the browser's default confirm.
 
-8. Add some animation while applicable.
-9. Please Use icons whenever applicable and use fonts (google fonts)
+14. Add some animation while applicable.
 10. Make the footer little more realistic
 11. Optimize your images
 12. Add something extra of your own. This will help you in the future.
@@ -63,12 +55,3 @@ Make sure you have done everything on the main part and bonus. deploy and test e
 6. Local storage is optional
 8. Try to host your site on Firebase (Netlify host will need extra configuration)
 9. Try to host server on heroku
-
-### What to submit 
-1. Your client side code github repository
-2. Your server side code github repository
-3. Your live website link
-
-
-
-Have FUN! Have Patience. 
