@@ -1,6 +1,6 @@
 # Getting Started with RAKIB-Jewellers [ live demo](https://rakib-jewellers.firebaseapp.com/)
 
-# Server Side code link: 
+# Server Side code link: https://github.com/karakib2k18/Jewellery-shop-server
 ### This project was created with  using Meterial UI, React, React-Hook-form, firebase, react-routerdom@5, node, express, mongodb etc.
 
 ## This website details and benifit is bellow:
