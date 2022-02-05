@@ -1,7 +1,7 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
@@ -46,7 +46,8 @@ const AddNewProducts = () => {
   };
 
   return (
-    <Container sx={{ border: 0, mt: 4 }} maxWidth="lg">
+    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Container sx={{ border: 0, py: 4 }} maxWidth="lg">
       <Typography gutterBottom variant="h5" component="div">
         ADD A NEW PRODUCT
       </Typography>
@@ -117,6 +118,7 @@ const AddNewProducts = () => {
         <Grid item xs={12} sm={3}></Grid>
       </Grid>
     </Container>
+    </Box>
   );
 };
 

@@ -94,11 +94,12 @@ const AllOrdersTable = (props) => {
   };
 
   return (
+    // <Box style={{ backgroundColor: "#eaeef2"}}>
     <TableRow
       key={allOrder?.name}
       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
     >
-      <TableCell component="th" scope="row" sx={{fontWeight: "bold"}}>
+      <TableCell component="th" scope="row" sx={{pb:5, fontWeight: "bold"}}>
         {allOrder?.fullname}
       </TableCell>
       <TableCell sx={{ fontSize: 18 }} align="center">
@@ -177,6 +178,7 @@ const AllOrdersTable = (props) => {
         </Button>
       </TableCell>
     </TableRow>
+    // </Box>
   );
 };
 

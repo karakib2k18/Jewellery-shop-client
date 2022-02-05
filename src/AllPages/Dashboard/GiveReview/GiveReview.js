@@ -58,7 +58,8 @@ const GiveReview = () => {
   };
 
   return (
-    <Container sx={{ border: 0, mt: 4 }} maxWidth="lg">
+    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Container sx={{ border: 0, pt: 4 }} maxWidth="lg">
       <Typography gutterBottom variant="h5" component="div">
         ADD A NEW REVIEW
       </Typography>
@@ -162,6 +163,7 @@ const GiveReview = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+              style={{ backgroundColor: "#fdca00", color: "black" }}
             >
               ADD REVIEW
             </Button>
@@ -170,6 +172,7 @@ const GiveReview = () => {
         <Grid item xs={12} sm={3}></Grid>
       </Grid>
     </Container>
+    </Box>
   );
 };
 

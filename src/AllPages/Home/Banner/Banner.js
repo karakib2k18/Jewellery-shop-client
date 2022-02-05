@@ -8,24 +8,43 @@ import { autoPlay } from "react-swipeable-views-utils";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
+  // // {
+  // //   imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner3-1920x600.jpg",
+  // // },
   // {
-  //   imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner3-1920x600.jpg",
+  //   imgPath: "https://i.ibb.co/BVZdGsX/banner1.jpg",
+  // },
+  // // {
+  // //   imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner1-1920x600.jpg",
+  // // },
+  // {
+  //   imgPath: "https://i.ibb.co/0JTw758/banner3.jpg",
+  // },
+  // {
+  //   imgPath: "https://i.ibb.co/f4CPqYM/banner-2.jpg",
+  // },
+  // {
+  //   imgPath: "https://www.anjalijewellers.in/assets/images/bridal.jpg",
   // },
   {
-    imgPath: "https://i.ibb.co/BVZdGsX/banner1.jpg",
+    imgPath: "https://www.lialijewellery.com/media/wysiwyg/Web_banner_1920x760_JAN.jpg",
   },
   // {
-  //   imgPath: "http://opencart.templatemela.com/OPC07/OPC070159/image/cache/catalog/mainbanner1-1920x600.jpg",
+  //   // imgPath: "https://www.lialijewellery.com/media/wysiwyg/Valentine_Web_banner_1920x760_.jpg",
   // },
   {
-    imgPath: "https://i.ibb.co/0JTw758/banner3.jpg",
+    imgPath: "https://www.lialijewellery.com/media/wysiwyg/DSF_Web_banner_1920x760_-2.jpg",
   },
   {
-    imgPath: "https://i.ibb.co/f4CPqYM/banner-2.jpg",
+    imgPath: "https://www.lialijewellery.com/media/wysiwyg/DSF_Web_banner_1920x760_-2.jpg",
   },
   {
-    imgPath: "https://www.anjalijewellers.in/assets/images/bridal.jpg",
+    imgPath: "https://www.lialijewellery.com/media/wysiwyg/Engagement_Ring_banner_O.jpg",
   },
+  {
+    imgPath: "https://www.lialijewellery.com/media/catalog/category/Diamond_Engagement_Ring.jpg",
+  },
+
 ];
 
 function Banner() {

@@ -45,7 +45,7 @@ const ShopCard = ({shop}) => {
               style={{ textDecoration: "none", color: "black" }}
               to={url}
             >
-              <Button variant="contained" >
+              <Button variant="contained"  sx={{ fontWeight: "bold" }}  style={{ backgroundColor: "#fdca00", color: "black" }}>
                <AddShoppingCartIcon/>  Add to Card
               </Button>
             </Link>

@@ -24,13 +24,13 @@ const AllOrders = () => {
   }, [isLoading]);
 
   return (
-    <Box>
-      <Typography  sx={{mb:5}} gutterBottom variant="h5" component="div">
+    <Box style={{ backgroundColor: "#eaeef2"}}>
+      <Typography  sx={{py:5}} gutterBottom variant="h5" component="div">
        All Orders
       </Typography>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={1}></Grid>
-        <Grid item xs={12} sm={12}>
+        <Grid item xs={1} sm={1}></Grid>
+        <Grid item xs={10} sm={10} sx={{pb:10, fontWeight: "bold"}}>
           <TableContainer component={Paper}>
             <Table size="large" aria-label="a dense table">
               {isLoading && <CircularProgress />}
@@ -73,7 +73,7 @@ const AllOrders = () => {
             </Table>
           </TableContainer>
         </Grid>
-        <Grid item xs={12} sm={1}></Grid>
+        <Grid item xs={1} sm={1}></Grid>
       </Grid>
     </Box>
   );

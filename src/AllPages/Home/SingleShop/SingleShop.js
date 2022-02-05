@@ -1,12 +1,11 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
-import {Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import SingleShopCard from "./SingleShopCard";
 import PlaceOrderTable from "./PlaceOrderTable";
 
 const SingleShop = () => {
-
   const { pdId } = useParams();
   const [singleshopslist, setSingleShopslist] = React.useState({});
   const [isLoading, setIsLoading] = React.useState(true);
@@ -22,22 +21,24 @@ const SingleShop = () => {
       });
   }, [pdId]);
 
-  
-
-
   return (
-    <Container sx={{ border: 0, mt: 4 }} maxWidth="lg">
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography gutterBottom variant="h5" component="div">
-            <SingleShopCard shop={singleshopslist}></SingleShopCard>
-          </Typography>
+    <Box style={{ backgroundColor: "#eaeef2" }}>
+      <Container sx={{ border: 0, py: 4 }} maxWidth="lg">
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <Typography gutterBottom variant="h5" component="div">
+              <SingleShopCard shop={singleshopslist}></SingleShopCard>
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <PlaceOrderTable
+              isLoading={isLoading}
+              singleshopslist={singleshopslist}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={6}>
-<PlaceOrderTable isLoading={isLoading} singleshopslist={singleshopslist}/>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 

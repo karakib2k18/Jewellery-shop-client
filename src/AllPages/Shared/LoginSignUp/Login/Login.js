@@ -35,18 +35,20 @@ const Login = () => {
     signInWithGoogle(location, history);
   };
   return (
+    <Box style={{ backgroundColor: "#eaeef2"}}>
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            py: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
+          
         >
-          <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "primary.main" }} style={{ backgroundColor: "teal"}}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5" sx={{ fontWeight: "bold" }}>
@@ -107,6 +109,7 @@ const Login = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
+              style={{ backgroundColor: "teal"}}
             >
               Sign In
             </Button>
@@ -117,6 +120,7 @@ const Login = () => {
               variant="contained"
               sx={{ mt: 2, fontWeight: "bold" }}
               onClick={handleGoogleSignIn}
+              style={{ backgroundColor: "teal"}}
             >
               Sign With Google
             </Button>
@@ -125,6 +129,7 @@ const Login = () => {
         </Box>
       </Container>
     </ThemeProvider>
+    </Box>
   );
 };
 export default Login;

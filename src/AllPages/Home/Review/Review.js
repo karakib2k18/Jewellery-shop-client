@@ -30,11 +30,11 @@ function Review() {
     setActiveStep(review);
   };
   return (
-    <Box>
-      <Typography variant="h4" noWrap component="div" sx={{ py: 2, m: 1 }}>
+    <Box style={{ backgroundColor: "#eaeef2"}}>
+      <Typography variant="h4" noWrap component="div" sx={{ py: 2, p: 1 }}>
         Client Testimonials
       </Typography>
-      <Typography variant="h5" noWrap component="div" sx={{ pb: 2, m: 1 }}>
+      <Typography variant="h5" noWrap component="div" sx={{ pb: 2, p: 1 }}>
         What they say
       </Typography>
       {isLoading && <CircularProgress />}
@@ -69,7 +69,6 @@ function Review() {
                 component="div"
                 sx={{ pb: 2, m: 1 }}
               >
-                {/* {review?.ratings} */}
               </Typography>
               <Rating name="read-only" value={review?.ratings} readOnly />
               <Typography

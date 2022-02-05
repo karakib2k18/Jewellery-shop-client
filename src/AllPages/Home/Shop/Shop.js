@@ -17,7 +17,8 @@ const Shop = () => {
       });
   }, []);
   return (
-    <Container sx={{ border: 0, my: 10 }} maxWidth="lg">
+    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Container sx={{ border: 0, py: 10 }} maxWidth="lg" >
       <Typography variant="h4" gutterBottom component="div" sx={{ my: 4 }}>
         Our Best Products
       </Typography>
@@ -35,6 +36,7 @@ const Shop = () => {
         </Grid>
       </Box>
     </Container>
+    </Box>
   );
 };
 

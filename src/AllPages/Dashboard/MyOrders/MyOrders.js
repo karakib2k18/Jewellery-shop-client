@@ -57,7 +57,7 @@ const MyOrders = () => {
   };
 
   return (
-    <Box>
+    <Box style={{ backgroundColor: "#eaeef2"}}>
     <Typography  sx={{mb:5}} gutterBottom variant="h5" component="div">
      My Orders
     </Typography>

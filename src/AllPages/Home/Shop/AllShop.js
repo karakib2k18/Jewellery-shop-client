@@ -18,9 +18,9 @@ const AllShop = () => {
       });
   }, []);
   return (
-<Box>
+    <Box style={{ backgroundColor: "#eaeef2"}}>
 <Container sx={{ border: 0 }} maxWidth="lg">
-      <Typography variant="h4" gutterBottom component="div" sx={{ my: 4 }}>
+      <Typography variant="h4" gutterBottom component="div" sx={{ py: 4 }}>
         Our All Products
       </Typography>
       {isLoading && <CircularProgress />}

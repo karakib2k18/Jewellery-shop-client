@@ -18,9 +18,9 @@ const ManageAllProducts = () => {
       });
   }, []);
   return (
-<Box>
+    <Box style={{ backgroundColor: "#eaeef2"}}>
 <Container sx={{ border: 0 }} maxWidth="lg">
-      <Typography variant="h4" gutterBottom component="div" sx={{ my: 2 }}>
+      <Typography variant="h4" gutterBottom component="div" sx={{ py: 6 }}>
         Manage All Products
       </Typography>
       {isLoading && <CircularProgress />}

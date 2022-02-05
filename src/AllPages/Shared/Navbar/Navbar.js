@@ -13,7 +13,23 @@ import useAuth from "../../../hooks/useAuth";
 import { Avatar } from "@mui/material";
 
 const Navbar = () => {
-  const { user, logout } = useAuth();
+  const dashboarduser = [
+    { name: "My Orders", to: "/myorders", current: false },
+    { name: "Give Review", to: "/givereview", current: false },
+    // { name: "Payment Now", to: "/paymentnow", current: false },
+  ];
+  const dashboardadmin = [
+    { name: "Add Products", to: "/addproducts", current: false },
+    { name: "Manage All Products", to: "/manageallproducts", current: false },
+    { name: "All Orders", to: "/allorders", current: false },
+    { name: " Add New Admin", to: "/addnewadmin", current: false },
+  ];
+  const navlist = [
+    { name: "Home", to: "/home", current: false },
+    { name: "Shops", to: "/shops", current: false },
+    { name: "Blogs", to: "/blogs", current: false },
+  ];
+  const { admin, user, logout } = useAuth();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
@@ -32,10 +48,22 @@ const Navbar = () => {
   const handleClosep = () => {
     setAnchorElp(null);
   };
+  const [anchorElpD, setAnchorElpD] = React.useState(null);
+
+  const handleMenupD = (event) => {
+    setAnchorElpD(event.currentTarget);
+  };
+
+  const handleClosepD = () => {
+    setAnchorElpD(null);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        style={{ backgroundColor: "#292a2d", color: "white" }}
+      >
         <Container maxWidth="xl">
           <Toolbar>
             <Typography
@@ -44,12 +72,12 @@ const Navbar = () => {
               component="div"
               sx={{ display: { xs: "none", sm: "block" } }}
             >
-              RAKIB-JEWELLERS
+              JULO
             </Typography>
 
-                        {/* for mobile version */}
+            {/* for mobile version */}
 
-                        <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
               <div>
                 <IconButton
                   size="large"
@@ -82,118 +110,33 @@ const Navbar = () => {
                   }}
                 >
                   {/* NAVBAR FOR DESKTOP */}
-                  <NavLink
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/home"
-                  >
-                    <MenuItem>
-                      <Typography
-                        onClick={handleClose}
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          m: 1,
-                        }}
-                      >
-                        Home
-                      </Typography>
-                    </MenuItem>
-                  </NavLink>
-                  <NavLink
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/shops"
-                  >
-                    <MenuItem>
-                      <Typography
-                        onClick={handleClose}
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          m: 1,
-                        }}
-                      >
-                        Shops
-                      </Typography>
-                    </MenuItem>
-                  </NavLink>
-                  <NavLink
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/blogs"
-                  >
-                    <MenuItem>
-                      <Typography
-                        onClick={handleClose}
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          m: 1,
-                        }}
-                      >
-                        Blogs
-                      </Typography>
-                    </MenuItem>
-                  </NavLink>
-                  {!(user?.displayName || user?.email) && (
-              <Box>
-                {/* NAVBAR FOR DESKTOP */}
+                  {navlist.map((item) => (
+                    <NavLink
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={item.to}
+                    >
+                      <MenuItem key={item.name}>
+                        <Typography
+                          onClick={handleClose}
+                          sx={{
+                            m: 1,
+                          }}
+                          variant="h6"
+                          textAlign="center"
+                        >
+                          {item.name}
+                        </Typography>
+                      </MenuItem>
+                    </NavLink>
+                  ))}
 
-                <NavLink
-                  style={{ textDecoration: "none", color: "black" }}
-                  to="/login"
-                >
-                  <MenuItem>
-                    <Typography
-                      variant="h6"
-                      noWrap
-                      component="div"
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        p: 1,
-                        m: 1,
-                      }}
-                    >
-                      Login
-                    </Typography>
-                  </MenuItem>
-                </NavLink>
-                <NavLink
-                  style={{ textDecoration: "none", color: "black" }}
-                  to="/signup"
-                >
-                  <MenuItem>
-                    <Typography
-                      variant="h6"
-                      noWrap
-                      component="div"
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        p: 1,
-                        m: 1,
-                      }}
-                    >
-                      SignUp
-                    </Typography>
-                  </MenuItem>
-                </NavLink>
-              </Box>
-            )}
-                  {(user?.displayName || user?.email) && (
+                  {!(user?.displayName || user?.email) && (
                     <Box>
                       {/* NAVBAR FOR DESKTOP */}
+
                       <NavLink
                         style={{ textDecoration: "none", color: "black" }}
-                        to="/dashboard"
+                        to="/login"
                       >
                         <MenuItem>
                           <Typography
@@ -203,13 +146,39 @@ const Navbar = () => {
                             sx={{
                               display: "flex",
                               alignItems: "center",
+                              p: 1,
                               m: 1,
                             }}
                           >
-                            Dashboard
+                            Login
                           </Typography>
                         </MenuItem>
                       </NavLink>
+                      <NavLink
+                        style={{ textDecoration: "none", color: "black" }}
+                        to="/signup"
+                      >
+                        <MenuItem>
+                          <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              p: 1,
+                              m: 1,
+                            }}
+                          >
+                            SignUp
+                          </Typography>
+                        </MenuItem>
+                      </NavLink>
+                    </Box>
+                  )}
+                  {(user?.displayName || user?.email) && (
+                    <Box>
+                      {/* NAVBAR FOR DESKTOP */}
                       <NavLink
                         style={{ textDecoration: "none", color: "black" }}
                         to="/dashboard"
@@ -238,102 +207,113 @@ const Navbar = () => {
 
             {/* for mobile version end here */}
 
-
-
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               {/* NAVBAR FOR DESKTOP */}
-
-              <NavLink
-                style={{ textDecoration: "none", color: "white" }}
-                to="/home"
-              >
-                <MenuItem>
-                  <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      p: 1,
-                      m: 1,
-                    }}
-                  >
-                    Home
-                  </Typography>
-                </MenuItem>
-              </NavLink>
-              <NavLink
-                style={{ textDecoration: "none", color: "white" }}
-                to="/shops"
-              >
-                <MenuItem>
-                  <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      p: 1,
-                      m: 1,
-                    }}
-                  >
-                    Shops
-                  </Typography>
-                </MenuItem>
-              </NavLink>
-              <NavLink
-                style={{ textDecoration: "none", color: "white" }}
-                to="/blogs"
-              >
-                <MenuItem>
-                  <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      p: 1,
-                      m: 1,
-                    }}
-                  >
-                    Blogs
-                  </Typography>
-                </MenuItem>
-              </NavLink>
-            </Box>
-
-            <Box sx={{ flexGrow: 1 }}></Box>
-
-            {/* if login the all button show in desktop */}
-            {(user?.displayName || user?.email) && (
-              <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                {/* NAVBAR FOR DESKTOP */}
+              {navlist.map((item) => (
                 <NavLink
                   style={{ textDecoration: "none", color: "white" }}
-                  to="/dashboard"
+                  to={item.to}
                 >
-                  <MenuItem>
+                  <MenuItem key={item.name}>
                     <Typography
-                      variant="h6"
-                      noWrap
-                      component="div"
                       sx={{
                         display: "flex",
                         alignItems: "center",
                         p: 1,
                         m: 1,
                       }}
+                      variant="h6"
+                      textAlign="center"
                     >
-                      Dashboard
+                      {item.name}
                     </Typography>
                   </MenuItem>
                 </NavLink>
+              ))}
+            </Box>
+
+            <Box sx={{ flexGrow: 1 }}></Box>
+            {(user?.displayName || user?.email) && (
+              <Box>
+                <Typography
+                  onClick={handleMenupD}
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    p: 1,
+                    m: 1,
+                  }}
+                >
+                  Dashboard
+                </Typography>
+
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="dashboard-appbar"
+                  anchorEl={anchorElpD}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElpD)}
+                  onClose={handleClosepD}
+                >
+                  {!admin && (
+                    <Box>
+                      {dashboarduser.map((item) => (
+                        <NavLink
+                          style={{ textDecoration: "none", color: "black" }}
+                          to={item.to}
+                        >
+                          <MenuItem key={item.name}>
+                            <Typography
+                              textAlign="center"
+                              onClick={handleClosepD}
+                            >
+                              {item.name}
+                            </Typography>
+                          </MenuItem>
+                        </NavLink>
+                      ))}
+                    </Box>
+                  )}
+                  {admin && (
+                    <Box>
+                      {dashboardadmin.map((item) => (
+                        <NavLink
+                          style={{ textDecoration: "none", color: "black" }}
+                          to={item.to}
+                        >
+                          <MenuItem key={item.name} to={item.to}>
+                            <Typography
+                              textAlign="center"
+                              onClick={handleClosepD}
+                            >
+                              {item.name}
+                            </Typography>
+                          </MenuItem>
+                        </NavLink>
+                      ))}
+                    </Box>
+                  )}
+                </Menu>
+              </Box>
+            )}
+
+            {/* if login the all button show in desktop */}
+            {(user?.displayName || user?.email) && (
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <NavLink
                   style={{ textDecoration: "none", color: "white" }}
-                  to="/dashboard"
+                  to="/home"
                 >
                   <MenuItem>
                     <Typography
@@ -354,6 +334,7 @@ const Navbar = () => {
                 </NavLink>
               </Box>
             )}
+
             {/* if not login then login singup show in desktop */}
             {!(user?.displayName || user?.email) && (
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -403,7 +384,7 @@ const Navbar = () => {
             )}
             {/* if login the picture and details show in desktop */}
             {(user?.displayName || user?.email) && (
-              <Box >
+              <Box>
                 <Avatar
                   alt="Remy Sharp"
                   src={user?.photoURL}
@@ -425,12 +406,13 @@ const Navbar = () => {
                   open={Boolean(anchorElp)}
                   onClose={handleClosep}
                 >
-                  <MenuItem onClick={handleClosep}>{user?.displayName}</MenuItem>
+                  <MenuItem onClick={handleClosep}>
+                    {user?.displayName}
+                  </MenuItem>
                   <MenuItem onClick={handleClosep}>{user?.email}</MenuItem>
                 </Menu>
               </Box>
             )}
-
           </Toolbar>
         </Container>
       </AppBar>
