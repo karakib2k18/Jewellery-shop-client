@@ -26,9 +26,9 @@ const images = [
   // {
   //   imgPath: "https://www.anjalijewellers.in/assets/images/bridal.jpg",
   // },
-  {
-    imgPath: "https://www.lialijewellery.com/media/wysiwyg/Web_banner_1920x760_JAN.jpg",
-  },
+  // {
+  //   imgPath: "https://www.lialijewellery.com/media/wysiwyg/Web_banner_1920x760_JAN.jpg",
+  // },
   // {
   //   // imgPath: "https://www.lialijewellery.com/media/wysiwyg/Valentine_Web_banner_1920x760_.jpg",
   // },
