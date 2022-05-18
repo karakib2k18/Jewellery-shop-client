@@ -362,13 +362,13 @@ export default function Dashboard(props: Props) {
     <Box >
       {/* <Toolbar /> */}
       {/* <Divider /> */}
-      <List sx={{ py: 2 }} style={{ width: 240 }}>
+      <List  sx={{ py: 2 }} style={{ width: 240 }}>
         {(user?.displayName || user?.email) && (
           <Box>
             {" "}
             {/* singlelink */}
             <Link  style={{ textDecoration: "none" }} to="/home">
-              <Button
+              <Button className="dashboard-left-side"
                 type="submit"
                 fullWidth
                 // //variant="contained"
@@ -379,8 +379,8 @@ export default function Dashboard(props: Props) {
                 <Box  sx={{px: 2   }}> GO BACK HOME</Box>
               </Button>
             </Link>
-            <Link style={{ textDecoration: "none" }} to={`${url}`}>
-              <Button
+            <Link  style={{ textDecoration: "none" }} to={`${url}`}>
+              <Button className="dashboard-left-side"
                 type="submit"
                 fullWidth
                 // //variant="contained"
@@ -393,7 +393,7 @@ export default function Dashboard(props: Props) {
             {!admin && (
               <Box>
                 <Link style={{ textDecoration: "none" }} to={`${url}/myorders`}>
-                  <Button
+                  <Button className="dashboard-left-side"
                     type="submit"
                     fullWidth
                     // //variant="contained"
@@ -408,7 +408,7 @@ export default function Dashboard(props: Props) {
                   style={{ textDecoration: "none" }}
                   to={`${url}/givereview`}
                 >
-                  <Button
+                  <Button className="dashboard-left-side"
                     type="submit"
                     fullWidth
                     // //variant="contained"
@@ -426,7 +426,7 @@ export default function Dashboard(props: Props) {
                   style={{ textDecoration: "none" }}
                   to={`${url}/addnewproduct`}
                 >
-                  <Button
+                  <Button className="dashboard-left-side"
                     type="submit"
                     fullWidth
                     // //variant="contained"
@@ -441,7 +441,7 @@ export default function Dashboard(props: Props) {
                   style={{ textDecoration: "none" }}
                   to={`${url}/manageallproducts`}
                 >
-                  <Button
+                  <Button className="dashboard-left-side"
                     type="submit"
                     fullWidth
                     // //variant="contained"
@@ -455,7 +455,7 @@ export default function Dashboard(props: Props) {
                   style={{ textDecoration: "none" }}
                   to={`${url}/allorders`}
                 >
-                  <Button
+                  <Button className="dashboard-left-side"
                     type="submit"
                     fullWidth
                     // //variant="contained"
@@ -469,7 +469,7 @@ export default function Dashboard(props: Props) {
                   style={{ textDecoration: "none" }}
                   to={`${url}/addnewadmin`}
                 >
-                  <Button
+                  <Button className="dashboard-left-side"
                     type="submit"
                     fullWidth
                     // //variant="contained"
@@ -482,7 +482,7 @@ export default function Dashboard(props: Props) {
               </Box>
             )}
             <Link style={{ textDecoration: "none" }} to="/login">
-              <Button
+              <Button className="dashboard-left-side"
                 type="submit"
                 fullWidth
                 onClick={logout}

@@ -65,14 +65,14 @@
   color: #f60 !important;
 }
 
-.css-otgx3u-MuiButtonBase-root-MuiButton-root {
+.dashboard-left-side {
   color: rgb(58, 43, 43) !important;
   text-transform: capitalize !important;
   font-size: 19px !important;
   font-weight: bold !important;
   justify-content:left !important;
 }
-.css-otgx3u-MuiButtonBase-root-MuiButton-root:hover {
+.dashboard-left-side:hover {
   color: #f60 !important;
 }
 
@@ -113,7 +113,7 @@
   border-radius: 20px !important;
 }
 
-
+/* 
 .css-1qlca3z {
   color: red !important;
-}
+} */

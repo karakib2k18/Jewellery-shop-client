@@ -29,9 +29,10 @@ const DashboardHome = () => {
           </Box>
         )}
         {!user.photoURL && (
-        <Typography gutterBottom variant="h4" component="div">
-       USER IMAGE NOT FOUND
-      </Typography>
+                    <img
+                    src="https://i.ibb.co/sbXDnbj/images.png"
+                    alt={user.displayName}
+                  />
         )}
 
         <Typography gutterBottom variant="h4" component="div">
