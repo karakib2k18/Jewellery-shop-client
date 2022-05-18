@@ -53,7 +53,7 @@ const AddNewAdmin = () => {
 
   return (
     <Box >
-    <Container sx={{ border: 0, py: 6 }} maxWidth="lg">
+    <Container sx={{ border: 0, py: 2 }} maxWidth="lg">
       <Typography gutterBottom variant="h5"  component="div">
         ADD A NEW ADMIN
       </Typography>

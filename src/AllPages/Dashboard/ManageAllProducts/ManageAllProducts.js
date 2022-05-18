@@ -20,7 +20,7 @@ const ManageAllProducts = () => {
   return (
     <Box >
 <Container sx={{ border: 0 }} maxWidth="lg">
-      <Typography variant="h4" gutterBottom component="div" sx={{ py: 6 }}>
+      <Typography variant="h4" gutterBottom component="div" sx={{ py: 2 }}>
         Manage All Products
       </Typography>
       {isLoading && <CircularProgress />}
