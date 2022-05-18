@@ -94,12 +94,12 @@ const AllOrdersTable = (props) => {
   };
 
   return (
-    // <Box style={{ backgroundColor: "#eaeef2"}}>
+    // <Box >
     <TableRow
       key={allOrder?.name}
       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
     >
-      <TableCell component="th" scope="row" sx={{pb:5, fontWeight: "bold"}}>
+      <TableCell component="th" scope="row" sx={{pb:1, fontWeight: "bold"}}>
         {allOrder?.fullname}
       </TableCell>
       <TableCell sx={{ fontSize: 18 }} align="center">
@@ -166,7 +166,8 @@ const AllOrdersTable = (props) => {
             Edit
           </Button>
         )}
-
+      </TableCell>
+      <TableCell sx={{ fontSize: 18 }} align="right">
         <Button
           type="submit"
           id="customize-delete-id-byme"
@@ -183,3 +184,111 @@ const AllOrdersTable = (props) => {
 };
 
 export default AllOrdersTable;
+
+////////////////////////newwwwwwwwwwwwwwwwwwwwwwww//////////////////////
+
+
+// import * as React from "react";
+// import TableCell from "@mui/material/TableCell";
+// import TableRow from "@mui/material/TableRow";
+// import { Button } from "@mui/material";
+// import swal from "sweetalert";
+// import Box from "@mui/material/Box";
+// import OrdersEdit from "../OrdersEdit/OrdersEdit";
+
+// const AllOrdersTable = (props) => {
+//   const {index, allOrder, setAllOrdersList, allOrdersList, setIsLoading, isLoading } =
+//     props;
+//   const handleDeleteButton = (id) => {
+//     console.log(id);
+//     swal({
+//       title: "Do you want delete?",
+//       icon: "warning",
+//       buttons: true,
+//       dangerMode: true,
+//     }).then((willDelete) => {
+//       if (willDelete) {
+//         fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`, {
+//           method: "DELETE",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//         })
+//           .then((res) => res.json())
+//           .then((data) => {
+//             if (data.deletedCount) {
+//               setIsLoading(true);
+//               // console.log(data)
+//               const remaining = allOrdersList.filter(
+//                 (booking) => booking._id !== id
+//               );
+//               setAllOrdersList(remaining);
+//               setIsLoading(false);
+//               swal("You have Successfully Delete Orders!", "Well Done!", {
+//                 icon: "success",
+//                 timer: 1220,
+//               });
+//             }
+//           });
+//       }
+//     });
+//   };
+
+//   return (
+//     <TableRow
+//       key={allOrder?.index}
+//       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+//     >
+//       <TableCell component="th" scope="row" sx={{ fontWeight: "bold" }}>
+//         {/* {allOrder?._id} */}
+//         # {(index+1)}
+//       </TableCell>
+//       <TableCell component="th" scope="row" sx={{ fontWeight: "bold" }}>
+//         {allOrder?.fullname}
+//       </TableCell>
+//       <TableCell sx={{ fontSize: 18 }} align="center">
+//         {allOrder?.email}
+//       </TableCell>
+//       <TableCell sx={{ fontSize: 18 }} align="center">
+//         {allOrder?.phone}
+//       </TableCell>
+//       <TableCell sx={{ fontSize: 18 }} align="center">
+//         {allOrder?.address}
+//       </TableCell>
+//       <TableCell sx={{ fontSize: 18 }} align="center">
+//         {allOrder?.pdname}
+//       </TableCell>
+//       <TableCell sx={{ fontSize: 18 }} align="center">
+//         {allOrder?.pdprice}
+//       </TableCell>
+//       <TableCell sx={{ fontSize: 18 }} align="right">
+
+//           <Box
+//           >
+//             {allOrder?.status}
+//           </Box>
+
+//       </TableCell>
+//       <TableCell sx={{ fontSize: 18 }} align="right">
+
+//           <Button
+//           >
+//            <OrdersEdit isLoading={isLoading} key={allOrder?._id} allOrder={allOrder} setIsLoading={setIsLoading} ></OrdersEdit>
+//           </Button>
+
+//         <Button
+//           type="submit"
+//           // id="customize-delete-id-byme"
+//           // variant="contained"
+//           sx={{ m: 1, mb: 1, fontWeight: "bold" }}
+//           onClick={() => handleDeleteButton(allOrder?._id)}
+//         >
+//           Delete
+//         </Button>
+//       </TableCell>
+//     </TableRow>
+//   );
+// };
+
+// export default AllOrdersTable;
+

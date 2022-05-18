@@ -5,7 +5,7 @@ import MobileStepper from "@mui/material/MobileStepper";
 import Typography from "@mui/material/Typography";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { CircularProgress, Rating} from "@mui/material";
+import { CircularProgress, Divider, Rating} from "@mui/material";
 
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -31,6 +31,7 @@ function Review() {
   };
   return (
     <Box style={{ backgroundColor: "#eaeef2"}}>
+
       <Typography variant="h4" noWrap component="div" sx={{ py: 2, p: 1 }}>
         Client Testimonials
       </Typography>
@@ -38,7 +39,7 @@ function Review() {
         What they say
       </Typography>
       {isLoading && <CircularProgress />}
-      <Box sx={{ maxWidth: 750, flexGrow: 1, mx: "auto" }}>
+      <Box sx={{ maxWidth: 750, flexGrow: 1, pb:3, mx: "auto" }}>
         <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
@@ -88,6 +89,8 @@ function Review() {
           sx={{display: "block",width: "100%", mx: "auto" }}
         />
       </Box>
+      <Divider />
+      <Divider />
     </Box>
   );
 }

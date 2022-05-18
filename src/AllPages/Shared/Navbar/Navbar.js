@@ -10,20 +10,21 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import Container from "@mui/material/Container";
 import useAuth from "../../../hooks/useAuth";
-import { Avatar } from "@mui/material";
+import { Avatar, Button } from "@mui/material";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Navbar = () => {
-  const dashboarduser = [
-    { name: "My Orders", to: "/myorders", current: false },
-    { name: "Give Review", to: "/givereview", current: false },
-    // { name: "Payment Now", to: "/paymentnow", current: false },
-  ];
-  const dashboardadmin = [
-    { name: "Add Products", to: "/addproducts", current: false },
-    { name: "Manage All Products", to: "/manageallproducts", current: false },
-    { name: "All Orders", to: "/allorders", current: false },
-    { name: " Add New Admin", to: "/addnewadmin", current: false },
-  ];
+  // const dashboarduser = [
+  //   { name: "My Orders", to: "/myorders", current: false },
+  //   { name: "Give Review", to: "/givereview", current: false },
+  //   // { name: "Payment Now", to: "/paymentnow", current: false },
+  // ];
+  // const dashboardadmin = [
+  //   { name: "Add Products", to: "/addproducts", current: false },
+  //   { name: "Manage All Products", to: "/manageallproducts", current: false },
+  //   { name: "All Orders", to: "/allorders", current: false },
+  //   { name: " Add New Admin", to: "/addnewadmin", current: false },
+  // ];
   const navlist = [
     { name: "Home", to: "/home", current: false },
     { name: "Shops", to: "/shops", current: false },
@@ -48,15 +49,15 @@ const Navbar = () => {
   const handleClosep = () => {
     setAnchorElp(null);
   };
-  const [anchorElpD, setAnchorElpD] = React.useState(null);
+  // const [anchorElpD, setAnchorElpD] = React.useState(null);
 
-  const handleMenupD = (event) => {
-    setAnchorElpD(event.currentTarget);
-  };
+  // const handleMenupD = (event) => {
+  //   setAnchorElpD(event.currentTarget);
+  // };
 
-  const handleClosepD = () => {
-    setAnchorElpD(null);
-  };
+  // const handleClosepD = () => {
+  //   setAnchorElpD(null);
+  // };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -66,6 +67,7 @@ const Navbar = () => {
       >
         <Container maxWidth="xl">
           <Toolbar>
+
             <Typography
               variant="h6"
               noWrap
@@ -234,82 +236,100 @@ const Navbar = () => {
 
             <Box sx={{ flexGrow: 1 }}></Box>
             {(user?.displayName || user?.email) && (
-              <Box>
-                <Typography
-                  onClick={handleMenupD}
-                  variant="h6"
-                  noWrap
-                  component="div"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    p: 1,
-                    m: 1,
-                  }}
-                >
-                  Dashboard
-                </Typography>
+                <NavLink
+                style={{ textDecoration: "none", color: "white" }}
+                to="/dashboard"
+              >
+                  <Button
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      px: 5,
+                      m: 1,
+                      fontWeight: "bold" 
+                    }}
+                    variant="h6"
+                    textAlign="center"
+                  >
+                   Dashboard
+                  </Button>
+              </NavLink>
+              // <Box>
+              //   <Typography
+              //     onClick={handleMenupD}
+              //     variant="h6"
+              //     noWrap
+              //     component="div"
+              //     sx={{
+              //       display: "flex",
+              //       alignItems: "center",
+              //       p: 1,
+              //       m: 1,
+              //     }}
+              //   >
+              //     Dashboard
+              //   </Typography>
 
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="dashboard-appbar"
-                  anchorEl={anchorElpD}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElpD)}
-                  onClose={handleClosepD}
-                >
-                  {!admin && (
-                    <Box>
-                      {dashboarduser.map((item) => (
-                        <NavLink
-                          style={{ textDecoration: "none", color: "black" }}
-                          to={item.to}
-                        >
-                          <MenuItem key={item.name}>
-                            <Typography
-                              textAlign="center"
-                              onClick={handleClosepD}
-                            >
-                              {item.name}
-                            </Typography>
-                          </MenuItem>
-                        </NavLink>
-                      ))}
-                    </Box>
-                  )}
-                  {admin && (
-                    <Box>
-                      {dashboardadmin.map((item) => (
-                        <NavLink
-                          style={{ textDecoration: "none", color: "black" }}
-                          to={item.to}
-                        >
-                          <MenuItem key={item.name} to={item.to}>
-                            <Typography
-                              textAlign="center"
-                              onClick={handleClosepD}
-                            >
-                              {item.name}
-                            </Typography>
-                          </MenuItem>
-                        </NavLink>
-                      ))}
-                    </Box>
-                  )}
-                </Menu>
-              </Box>
+              //   <Menu
+              //     sx={{ mt: "45px" }}
+              //     id="dashboard-appbar"
+              //     anchorEl={anchorElpD}
+              //     anchorOrigin={{
+              //       vertical: "top",
+              //       horizontal: "right",
+              //     }}
+              //     keepMounted
+              //     transformOrigin={{
+              //       vertical: "top",
+              //       horizontal: "right",
+              //     }}
+              //     open={Boolean(anchorElpD)}
+              //     onClose={handleClosepD}
+              //   >
+              //     {admin && (
+              //       <Box>
+              //         {dashboarduser.map((item) => (
+              //           <NavLink
+              //             style={{ textDecoration: "none", color: "black" }}
+              //             to={item.to}
+              //           >
+              //             <MenuItem key={item.name}>
+              //               <Typography
+              //                 textAlign="center"
+              //                 onClick={handleClosepD}
+              //               >
+              //                 {item.name}
+              //               </Typography>
+              //             </MenuItem>
+              //           </NavLink>
+              //         ))}
+              //       </Box>
+              //     )}
+              //     {admin && (
+              //       <Box>
+              //         {dashboardadmin.map((item) => (
+              //           <NavLink
+              //             style={{ textDecoration: "none", color: "black" }}
+              //             to={item.to}
+              //           >
+              //             <MenuItem key={item.name} to={item.to}>
+              //               <Typography
+              //                 textAlign="center"
+              //                 onClick={handleClosepD}
+              //               >
+              //                 {item.name}
+              //               </Typography>
+              //             </MenuItem>
+              //           </NavLink>
+              //         ))}
+              //       </Box>
+              //     )}
+              //   </Menu>
+              // </Box>
             )}
 
             {/* if login the all button show in desktop */}
-            {(user?.displayName || user?.email) && (
+            {/* {(user?.displayName || user?.email) && (
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <NavLink
                   style={{ textDecoration: "none", color: "white" }}
@@ -333,7 +353,7 @@ const Navbar = () => {
                   </MenuItem>
                 </NavLink>
               </Box>
-            )}
+            )} */}
 
             {/* if not login then login singup show in desktop */}
             {!(user?.displayName || user?.email) && (
@@ -410,6 +430,22 @@ const Navbar = () => {
                     {user?.displayName}
                   </MenuItem>
                   <MenuItem onClick={handleClosep}>{user?.email}</MenuItem>
+                  <Box >
+                <NavLink
+                  to="/home"
+                  style={{ textDecoration: "none" }}
+                  >
+                  <MenuItem>
+                    <Button
+                     style={{ color: "#f60", }}
+                      onClick={logout}
+                    >
+                <LogoutIcon className="iconcolor"></LogoutIcon>
+                <Box sx={{fontWeight: "bold" , px: 2 }}>Logout</Box>
+                    </Button>
+                  </MenuItem>
+                </NavLink>
+              </Box>
                 </Menu>
               </Box>
             )}

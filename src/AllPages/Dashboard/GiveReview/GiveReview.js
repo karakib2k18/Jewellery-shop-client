@@ -58,7 +58,7 @@ const GiveReview = () => {
   };
 
   return (
-    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Box >
     <Container sx={{ border: 0, pt: 4 }} maxWidth="lg">
       <Typography gutterBottom variant="h5" component="div">
         ADD A NEW REVIEW
@@ -163,7 +163,7 @@ const GiveReview = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
-              style={{ backgroundColor: "#fdca00", color: "black" }}
+              style={{ backgroundColor: "#f60", color: "white" }}
             >
               ADD REVIEW
             </Button>

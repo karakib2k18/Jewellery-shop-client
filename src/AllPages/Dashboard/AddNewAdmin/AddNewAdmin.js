@@ -52,9 +52,9 @@ const AddNewAdmin = () => {
   };
 
   return (
-    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Box >
     <Container sx={{ border: 0, py: 6 }} maxWidth="lg">
-      <Typography gutterBottom variant="h5" component="div">
+      <Typography gutterBottom variant="h5"  component="div">
         ADD A NEW ADMIN
       </Typography>
       <Grid container spacing={2}>
@@ -79,7 +79,8 @@ const AddNewAdmin = () => {
             <Button
               type="submit"
               fullWidth
-              variant="contained"
+              // variant="contained"
+              style={{ backgroundColor: "#f60", color: "white" }}
               sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
             >
               ADD NEW ADMIN

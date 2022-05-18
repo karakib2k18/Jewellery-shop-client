@@ -21,6 +21,7 @@ const MyOrders = () => {
       .then((json) => {
         setMyOrdersList(json);
         setIsLoading(false);
+        console.log(json);
       });
   }, [user.email]);
 
@@ -57,13 +58,13 @@ const MyOrders = () => {
   };
 
   return (
-    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Box  style={{ backgroundColor: "#eaeef2"}}>
     <Typography  sx={{mb:5}} gutterBottom variant="h5" component="div">
      My Orders
     </Typography>
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={1}></Grid>
-      <Grid item xs={12} sm={10}>
+      {/* <Grid item xs={12} sm={1}></Grid> */}
+      <Grid item xs={12} sm={12}>
         <TableContainer component={Paper}>
           <Table size="large" aria-label="a dense table">
             {isLoading && <CircularProgress />}
@@ -125,7 +126,7 @@ const MyOrders = () => {
           </Table>
         </TableContainer>
       </Grid>
-      <Grid item xs={12} sm={1}></Grid>
+      {/* <Grid item xs={12} sm={1}></Grid> */}
     </Grid>
     </Box>
   );

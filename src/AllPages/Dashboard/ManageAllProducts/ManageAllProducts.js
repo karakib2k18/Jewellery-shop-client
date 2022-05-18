@@ -18,7 +18,7 @@ const ManageAllProducts = () => {
       });
   }, []);
   return (
-    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Box >
 <Container sx={{ border: 0 }} maxWidth="lg">
       <Typography variant="h4" gutterBottom component="div" sx={{ py: 6 }}>
         Manage All Products

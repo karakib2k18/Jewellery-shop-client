@@ -17,7 +17,7 @@ const BlogsHome = () => {
       });
   }, []);
   return (
-<Box style={{ backgroundColor: "#eaeef2"}}>
+<Box  style={{ backgroundColor: "#eaeef2"}}>
 <Container sx={{ border: 0 }} maxWidth="lg">
       <Typography variant="h4" gutterBottom component="div" sx={{ py: 5 }}>
         Our Latest Blogs 

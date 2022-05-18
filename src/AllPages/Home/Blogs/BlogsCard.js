@@ -33,7 +33,7 @@ const BlogsCard = ({blog}) => {
               style={{ textDecoration: "none", color: "black" }}
               to='/shops'
             >
-              <Button variant="contained" sx={{ fontWeight: "bold" }} style={{ backgroundColor: "#fdca00", color: "black" }}>
+              <Button variant="contained" sx={{ fontWeight: "bold" }} style={{ backgroundColor: "#f60", color: "white" }}>
               Shop Now+
               </Button>
             </Link>

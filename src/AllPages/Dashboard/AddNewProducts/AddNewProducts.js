@@ -46,7 +46,7 @@ const AddNewProducts = () => {
   };
 
   return (
-    <Box style={{ backgroundColor: "#eaeef2"}}>
+    <Box >
     <Container sx={{ border: 0, py: 4 }} maxWidth="lg">
       <Typography gutterBottom variant="h5" component="div">
         ADD A NEW PRODUCT
@@ -108,7 +108,8 @@ const AddNewProducts = () => {
             <Button
               type="submit"
               fullWidth
-              variant="contained"
+              style={{ backgroundColor: "#f60", color: "white" }}
+              // variant="contained"
               sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
             >
               ADD PRODUCT

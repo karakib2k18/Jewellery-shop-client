@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
+import { Divider } from "@mui/material";
 
 
 function Copyright() {
@@ -34,6 +35,8 @@ const Footer = () => {
         pt: 6,
       }}
     >
+      <Divider />
+      <Divider />
       <CssBaseline />
       <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="xl">
         <Box sx={{ flexGrow: 1 }}>

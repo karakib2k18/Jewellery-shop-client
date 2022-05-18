@@ -142,7 +142,7 @@ const PlaceOrderTable = (props) => {
         <Button
           type="submit"
           fullWidth
-          variant="contained"
+          style={{ backgroundColor: "#f60", color: "white" }}
           sx={{ mt: 1, mb: 1, fontWeight: "bold" }}
         >
           Place Order

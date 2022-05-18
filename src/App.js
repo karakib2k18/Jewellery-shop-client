@@ -9,15 +9,9 @@ import SignUp from "./AllPages/Shared/LoginSignUp/SignUp/SignUp";
 import Login from "./AllPages/Shared/LoginSignUp/Login/Login";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./AllPages/Shared/PrivateRoute/PrivateRoute";
+import Dashboard from "./AllPages/Dashboard/Dashboard/Dashboard";
 import AllShop from "./AllPages/Home/Shop/AllShop";
 import SingleShop from "./AllPages/Home/SingleShop/SingleShop";
-import MyOrders from "./AllPages/Dashboard/MyOrders/MyOrders";
-// import PaymentDetails from "./AllPages/Dashboard/PaymentDetails/PaymentDetails";
-import AddNewAdmin from "./AllPages/Dashboard/AddNewAdmin/AddNewAdmin";
-import AllOrders from "./AllPages/Dashboard/AllOrders/AllOrders";
-import ManageAllProducts from "./AllPages/Dashboard/ManageAllProducts/ManageAllProducts";
-import AddNewProducts from "./AllPages/Dashboard/AddNewProducts/AddNewProducts";
-import GiveReview from "./AllPages/Dashboard/GiveReview/GiveReview";
 
 
 function App() {
@@ -42,23 +36,8 @@ function App() {
               <Route path="/blogs">
                 <Blogs />
               </Route>
-              <PrivateRoute path="/myorders">
-                <MyOrders />
-              </PrivateRoute>
-              <PrivateRoute path="/givereview">
-                <GiveReview />
-              </PrivateRoute>
-              <PrivateRoute path="/addproducts">
-                <AddNewProducts />
-              </PrivateRoute>
-              <PrivateRoute path="/manageallproducts">
-                <ManageAllProducts />
-              </PrivateRoute>
-              <PrivateRoute path="/allorders">
-                <AllOrders />
-              </PrivateRoute>
-              <PrivateRoute path="/addnewadmin">
-                <AddNewAdmin />
+              <PrivateRoute path="/dashboard">
+                <Dashboard />
               </PrivateRoute>
               <Route path="/login">
                 <Login />
@@ -77,6 +56,3 @@ function App() {
 }
 
 export default App;
-
-
-//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
