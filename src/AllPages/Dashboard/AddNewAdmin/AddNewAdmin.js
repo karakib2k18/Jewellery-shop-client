@@ -25,7 +25,7 @@ const AddNewAdmin = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("https://tranquil-anchorage-09740.herokuapp.com/users/admin", {
+        fetch("https://rakib-jewellers.onrender.com/users/admin", {
           method: "PUT", // or 'PUT'
           headers: {
             "Content-Type": "application/json",

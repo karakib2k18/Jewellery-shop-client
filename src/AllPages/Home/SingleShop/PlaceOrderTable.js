@@ -23,7 +23,7 @@ const PlaceOrderTable = (props) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("https://tranquil-anchorage-09740.herokuapp.com/orders", {
+        fetch("https://rakib-jewellers.onrender.com/orders", {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",

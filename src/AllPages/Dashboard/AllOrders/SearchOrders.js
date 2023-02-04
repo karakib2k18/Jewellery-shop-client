@@ -22,7 +22,7 @@
 //     // console.log(data);
 //     setIsLoading(true);
 
-//     fetch("https://tranquil-anchorage-09740.herokuapp.com/orders/")
+//     fetch("https://rakib-jewellers.onrender.com/orders/")
 //       .then((res) => res.json())
 //       .then((founddatas) => {
 //         console.log(founddatas);

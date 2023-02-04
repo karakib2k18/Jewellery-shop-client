@@ -66,7 +66,7 @@
 //   const [orderUpdate, setOrderUpdate] = React.useState({});
 
 //   const handleEditButton = (id) => {
-//     fetch(`https://tranquil-anchorage-09740.herokuapp.com/shop/${id}`)
+//     fetch(`https://rakib-jewellers.onrender.com/shop/${id}`)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setOrderUpdate(data);
@@ -86,7 +86,7 @@
 //     console.log(data);
 
 //     setIsLoading(true);
-//     const url = `https://tranquil-anchorage-09740.herokuapp.com/shop/${data._id}`;
+//     const url = `https://rakib-jewellers.onrender.com/shop/${data._id}`;
 //     fetch(url, {
 //       method: "PUT",
 //       headers: {

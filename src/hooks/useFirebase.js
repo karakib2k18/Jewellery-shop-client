@@ -105,7 +105,7 @@ const useFirebase = () => {
   };
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://tranquil-anchorage-09740.herokuapp.com/users", {
+    fetch("https://rakib-jewellers.onrender.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -115,7 +115,7 @@ const useFirebase = () => {
   };
   // admin gmail laod
   useEffect(() => {
-    fetch(`https://tranquil-anchorage-09740.herokuapp.com/isadmin/${user.email}`)
+    fetch(`https://rakib-jewellers.onrender.com/isadmin/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
 }, [user.email])

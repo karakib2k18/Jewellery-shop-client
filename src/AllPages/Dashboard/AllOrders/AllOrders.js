@@ -16,7 +16,7 @@ const AllOrders = () => {
   const [allOrdersList, setAllOrdersList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("https://tranquil-anchorage-09740.herokuapp.com/orders")
+    fetch("https://rakib-jewellers.onrender.com/orders")
       .then((response) => response.json())
       .then((json) => {
         setAllOrdersList(json);
@@ -121,8 +121,8 @@ export default AllOrders;
 //   const perPageItem = 5;
 
 //   React.useEffect(() => {
-//     fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders?currentPage=${currentPage}&&perPageItem=${perPageItem}`)
-//     // fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders?currentPage=${currentPage}&&perPageItem=${perPageItem}`)
+//     fetch(`https://rakib-jewellers.onrender.com/orders?currentPage=${currentPage}&&perPageItem=${perPageItem}`)
+//     // fetch(`https://rakib-jewellers.onrender.com/orders?currentPage=${currentPage}&&perPageItem=${perPageItem}`)
 //       .then((response) => response.json())
 //       .then((data) => {
 //         setAllOrdersList(data);

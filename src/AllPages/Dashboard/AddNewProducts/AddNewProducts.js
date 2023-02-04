@@ -19,7 +19,7 @@ const AddNewProducts = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("https://tranquil-anchorage-09740.herokuapp.com/shop", {
+        fetch("https://rakib-jewellers.onrender.com/shop", {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",

@@ -16,7 +16,7 @@ const AllOrdersTable = (props) => {
 
   const handleEditButton = (id) => {
     // reset();
-    fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`)
+    fetch(`https://rakib-jewellers.onrender.com/orders/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -32,7 +32,7 @@ const AllOrdersTable = (props) => {
     setUserUpdate(updateStatus);
     // console.log(updateStatus);
 
-    const url = `https://tranquil-anchorage-09740.herokuapp.com/orders/${data._id}`;
+    const url = `https://rakib-jewellers.onrender.com/orders/${data._id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -67,7 +67,7 @@ const AllOrdersTable = (props) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`, {
+        fetch(`https://rakib-jewellers.onrender.com/orders/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -208,7 +208,7 @@ export default AllOrdersTable;
 //       dangerMode: true,
 //     }).then((willDelete) => {
 //       if (willDelete) {
-//         fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`, {
+//         fetch(`https://rakib-jewellers.onrender.com/orders/${id}`, {
 //           method: "DELETE",
 //           headers: {
 //             "Content-Type": "application/json",

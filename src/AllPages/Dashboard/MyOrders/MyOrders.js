@@ -16,7 +16,7 @@ const MyOrders = () => {
   const [myOrdersList, setMyOrdersList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch(`https://tranquil-anchorage-09740.herokuapp.com/myorders/${user.email}`)
+    fetch(`https://rakib-jewellers.onrender.com/myorders/${user.email}`)
       .then((response) => response.json())
       .then((json) => {
         setMyOrdersList(json);
@@ -34,7 +34,7 @@ const MyOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://tranquil-anchorage-09740.herokuapp.com/orders/${id}`, {
+        fetch(`https://rakib-jewellers.onrender.com/orders/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

@@ -26,7 +26,7 @@ const GiveReview = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch("https://tranquil-anchorage-09740.herokuapp.com/review", {
+        fetch("https://rakib-jewellers.onrender.com/review", {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",

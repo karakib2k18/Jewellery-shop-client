@@ -10,7 +10,7 @@ const Blogs = () => {
   const [blogslist, setBlogsslist] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("https://tranquil-anchorage-09740.herokuapp.com/blogs")
+    fetch("https://rakib-jewellers.onrender.com/blogs")
       .then((response) => response.json())
       .then((json) => {
         setBlogsslist(json);
